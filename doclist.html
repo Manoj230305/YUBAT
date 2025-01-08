@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Therapy List</title>
+
+        <!-- CSS FILES -->        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/style.css" rel="stylesheet">
+
+    </head>
+    
+    <body>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-8 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-geo-alt me-2"></i>
+                            Anna Nagar, MDU 
+                        </p>
+
+                        <p class="d-flex mb-0">
+                            <i class="bi-envelope me-2"></i>
+
+                            <a href="mailto:info@company.com">
+                                info@yubat.com
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-youtube"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-whatsapp"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+          <div class="container">
+              <a class="navbar-brand" href="index.html">
+                  <img src="images/Yubat-New-Logo.png" class="logo img-fluid" alt="Kind Heart Charity" style="height: 80px; width: auto;">
+                  <!-- <span>
+                      Kind Heart Charity
+                      <small>Non-profit Organization</small>
+                  </span> -->
+              </a>
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                      <li class="nav-item">
+                          <a class="nav-link click-scroll" href="#top">Home</a>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="nav-link click-scroll" href="#section_2">About</a>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="nav-link click-scroll" href="#section_3">Career</a>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="nav-link click-scroll" href="#section_4">Product</a>
+                      </li>
+
+                      <li class="nav-item dropdown">
+                          <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+
+                          <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                              <li><a class="dropdown-item" href="news.html">News Listing</a></li>
+
+                              <li><a class="dropdown-item" href="news-detail.html">News Detail</a></li>
+                          </ul>
+                      </li>
+
+                      <li class="nav-item">
+                          <a class="nav-link click-scroll" href="#section_6">Contact Us</a>
+                      </li>
+
+                      <li class="nav-item ms-3">
+                          <a class="nav-link custom-btn custom-border-btn btn" href="doclist.html">Book a couch</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+      <main>
+
+        <section class="news-detail-header-section text-center">
+            <div class="section-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12">
+                        <h1 class="text-white">Explore Trusted Counseling Pros!</h1>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section section-padding">
+            <div class="container">
+              <div class="row">
+                <!-- Left Section: Timeline -->
+                <div class="col-lg-8 col-12 mb-3">
+                  <div class="timeline d-flex align-items-center mb-4">
+                    <button class="btn btn-light btn-sm me-2" id="prev-date-btn">
+                      <i class="bi-chevron-left"></i>
+                    </button>
+                    <div id="date-container" class="d-flex justify-content-between w-100"></div>
+                    <button class="btn btn-light btn-sm ms-2" id="next-date-btn">
+                      <i class="bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+          
+                <!-- Right Section: Search Box -->
+                <div class="col-lg-4 col-12">
+                  <form class="custom-form search-form" action="#" method="post" role="form">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button type="submit" class="form-control">
+                      <i class="bi-search"></i>
+                    </button>
+                  </form>
+          
+                  <!-- Filter Option -->
+                  <!-- <div class="filter-option mt-3">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="filter" placeholder="Filter" aria-label="Filter">
+                      <span class="input-group-text">
+                        <i class="bi-filter"></i>
+                      </span>
+                    </div>
+                  </div> -->
+                </div>
+          
+                <!-- Tags Block -->
+                <div class="row align-items-center mt-4">
+                  <!-- Tags Block -->
+                  <div class="col-lg-10 col-12">
+                    <div class="tags-block d-flex flex-wrap">
+                      <a href="#" class="tags-block-link" onclick="removeTag(this)">
+                        Anxiety <span class="bi-x-circle"></span>
+                      </a>
+                      <a href="#" class="tags-block-link" onclick="removeTag(this)">
+                        Relationship <span class="bi-x-circle"></span>
+                      </a>
+                      <a href="#" class="tags-block-link" onclick="removeTag(this)">
+                        Family <span class="bi-x-circle"></span>
+                      </a>
+                      <a href="#" class="tags-block-link" onclick="removeTag(this)">
+                        Depression <span class="bi-x-circle"></span>
+                      </a>
+                      <a href="#" class="tags-block-link" onclick="removeTag(this)">
+                        Anger Management <span class="bi-x-circle"></span>
+                      </a>
+                    </div>
+                  </div>
+                  
+                
+                  <!-- Filter Option -->
+                  <div class="col-lg-2 col-12">
+                    <button class="btn btn-filter w-100 d-flex align-items-center justify-content-center" id="filter-button">
+                      <i class="bi-filter me-2"></i>
+                      Filter
+                    </button>
+                    
+                  </div>
+                  
+                  <!-- Modal for Filter -->
+                  <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="filterModalLabel">Filter Therapists</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body d-flex">
+                          <!-- Left side categories -->
+                          <div class="categories">
+                            <button class="category-btn active" id="therapyBtn">Therapy</button>
+                            <button class="category-btn" id="expertiseBtn">Expertise</button>
+                            <button class="category-btn" id="priceBtn">Price</button>
+                            <button class="category-btn" id="languageBtn">Language</button>
+                            <button class="category-btn" id="genderBtn">Gender</button>
+                          </div>
+                  
+                          <!-- Right side content -->
+                          <div id="filterContent">
+                            <h5>For You</h5>
+                            <ul>
+                              <li><input type="radio" name="therapy" value="you"> For You</li>
+                              <li><input type="radio" name="therapy" value="partner"> For You & Your Partner</li>
+                              <li><input type="radio" name="therapy" value="child"> For Your Child</li>
+                              <li><input type="radio" name="therapy" value="family"> For You & Your Family</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" id="clearAllBtn">Clear All</button>
+                          <button type="button" class="btn btn-primary" id="applyFilterBtn">Apply Filter</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                </div>
+                
+
+          
+                <!-- Cards Section -->
+                <div class="col-12 mt-4">
+                  <div class="row">
+                    <!-- Card 1 -->
+                    <div class="row">
+                      <!-- First 3 cards (always visible) -->
+                      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                          <div class="img-avatar">
+                            <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                          </div>
+                          <div class="card-text">
+                            <div class="portada" style="background-image: url('images/aashi.jpeg');"></div>
+                            <div class="title-total">
+                              <div class="title">Dr. Aashifa</div>
+                              <h2>Psychiatrist</h2>
+                              <div class="desc">
+                                <p><strong>Speaks</strong>: Hindi, Tamil, English, Malayalam</p>
+                                <p><strong>Expertise</strong>: Talks a lot, Ranting and Gossips</p>
+                                <p><strong>Mode</strong>: Ava vetti thaan but naughty sisy</p>
+                                <p><strong>Habits</strong>: Pesikitte irupa</p>
+                              </div>
+                              <div class="actions">
+                                <button><i class="far fa-heart"></i></button>
+                                <button><i class="far fa-envelope"></i></button>
+                                <button><i class="fas fa-user-friends"></i></button>
+                              </div>
+                            </div>
+                            <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                          <div class="img-avatar">
+                            <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                          </div>
+                          <div class="card-text">
+                            <div class="portada" style="background-image: url('images/dim.jpg');"></div>
+                            <div class="title-total">
+                              <div class="title">Dr. Dhivya Lakshmi</div>
+                              <h2>Psychiatrist</h2>
+                              <div class="desc">
+                                <p><strong>Speaks</strong>: Hindi, Tamil, English, Malayalam, Sourastra</p>
+                                <p><strong>Expertise</strong>: Quite Talkative, Has all Knowledge</p>
+                                <p><strong>Mode</strong>: Busy aa irukura mathiri katipa</p>
+                                <p><strong>Habits</strong>: Nose nondifying</p>
+                              </div>
+                              <div class="actions">
+                                <button><i class="far fa-heart"></i></button>
+                                <button><i class="far fa-envelope"></i></button>
+                                <button><i class="fas fa-user-friends"></i></button>
+                              </div>
+                            </div>
+                            <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    
+                      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                          <div class="img-avatar">
+                            <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                          </div>
+                          <div class="card-text">
+                            <div class="portada" style="background-image: url('images/jemi.jpg');"></div>
+                            <div class="title-total">
+                              <div class="title">Dr. Jeyanthi</div>
+                              <h2>Psychiatrist</h2>
+                              <div class="desc">
+                                <p><strong>Speaks</strong>: Tamil, English, Telugu</p>
+                                <p><strong>Expertise</strong>: Known for consoling, any issues contact her.</p>
+                                <p><strong>Mode</strong>: Chats and over the phone call</p>
+                                <p><strong>Habits</strong>: Ha ha Haasini</p>
+                              </div>
+                              <div class="actions">
+                                <button><i class="far fa-heart"></i></button>
+                                <button><i class="far fa-envelope"></i></button>
+                                <button><i class="fas fa-user-friends"></i></button>
+                              </div>
+                            </div>
+                            <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Initially hidden cards -->
+                    <div class="row hidden-cards" style="display: none;">
+                      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                          <div class="img-avatar">
+                            <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                          </div>
+                          <div class="card-text">
+                            <div class="portada" style="background-image: url('images/vj1.jpg');"></div>
+                            <div class="title-total">
+                              <div class="title">Dr. Vijay</div>
+                              <h2>Codedoctor</h2>
+                              <div class="desc">
+                                <p><strong>Speaks</strong>: Hindi, Tamil, English, Sourastra</p>
+                                <p><strong>Expertise</strong>: Thinking but quite over-thinking as well</p>
+                                <p><strong>Mode</strong>:Can't talk</p>
+                                <p><strong>Habits</strong>: Doctor tha ana code um poduvaru</p>
+                              </div>
+                              <div class="actions">
+                                <button><i class="far fa-heart"></i></button>
+                                <button><i class="far fa-envelope"></i></button>
+                                <button><i class="fas fa-user-friends"></i></button>
+                              </div>
+                            </div>
+                            <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                          <div class="img-avatar">
+                            <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                          </div>
+                          <div class="card-text">
+                            <div class="portada" style="background-image: url('images/mep.jpg');"></div>
+                            <div class="title-total">
+                              <div class="title">Dr. MEP</div>
+                              <h2>Psycologist</h2>
+                              <div class="desc">
+                                <p><strong>Speaks</strong>: Hindi, Tamil, English, Malayalam, Sourastra, French</p>
+                                <p><strong>Expertise</strong>: Nalla doctor tha ana vaithiyam pakka matar</p>
+                                <p><strong>Mode</strong>: Any mode but not available</p>
+                                <p><strong>Habits</strong>: Pubg aduvaru avalotha</p>
+                              </div>
+                              <div class="actions">
+                                <button><i class="far fa-heart"></i></button>
+                                <button><i class="far fa-envelope"></i></button>
+                                <button><i class="fas fa-user-friends"></i></button>
+                              </div>
+                            </div>
+                            <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                          <div class="img-avatar">
+                            <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                          </div>
+                          <div class="card-text">
+                            <div class="portada" style="background-image: url('images/sanjan.jpg');"></div>
+                            <div class="title-total">
+                              <div class="title">Dr. Sanjan</div>
+                              <h2>Psycologist</h2>
+                              <div class="desc">
+                                <p><strong>Speaks</strong>:Tamil, English, Hindi, vera onu theriyathu</p>
+                                <p><strong>Expertise</strong>: Love kiga valkai prechanai ku</p>
+                                <p><strong>Mode</strong>: In person tha, Ver engum kilaigal ilai</p>
+                                <p><strong>Habits</strong>: Debugging</p>
+                              </div>
+                              <div class="actions">
+                                <button><i class="far fa-heart"></i></button>
+                                <button><i class="far fa-envelope"></i></button>
+                                <button><i class="fas fa-user-friends"></i></button>
+                              </div>
+                            </div>
+                            <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Show More button -->
+                    <div class="text-center">
+                      <button id="showMoreBtn" class="btn btn-primary">Show More</button>
+                    </div>
+                    
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+            
+            
+          
+          <script>  
+              const dateContainer = document.getElementById("date-container");
+              const prevDateBtn = document.getElementById("prev-date-btn");
+              const nextDateBtn = document.getElementById("next-date-btn");
+              let currentDate = new Date();
+            
+    
+              function generateDates(startDate) {
+                dateContainer.innerHTML = ""; 
+                for (let i = -2; i <= 2; i++) {
+                  const date = new Date(startDate);
+                  date.setDate(startDate.getDate() + i);
+            
+                  const day = date.toLocaleString("en-US", { weekday: "short" });
+                  const dayNum = date.getDate();
+                  const month = date.toLocaleString("en-US", { month: "short" });
+            
+                  const dateItem = document.createElement("div");
+                  dateItem.classList.add("date-item", "text-center");
+                  if (i === 0) dateItem.classList.add("selected");
+            
+                  dateItem.innerHTML = `
+                    <div class="day fw-bold">${day}</div>
+                    <div class="date fs-4 fw-bold">${dayNum}</div>
+                    <div class="month">${month}</div>
+                  `;
+            
+                  dateItem.addEventListener("click", () => {
+                    document.querySelectorAll(".date-item").forEach(item => {
+                      item.classList.remove("selected");
+                    });
+                    dateItem.classList.add("selected");
+                  });
+            
+                  dateContainer.appendChild(dateItem);
+                }
+              }
+            
+              // Update dates when navigation buttons are clicked
+              prevDateBtn.addEventListener("click", () => {
+                currentDate.setDate(currentDate.getDate() - 1);
+                generateDates(currentDate);
+              });
+            
+              nextDateBtn.addEventListener("click", () => {
+                currentDate.setDate(currentDate.getDate() + 1);
+                generateDates(currentDate);
+              });
+            
+              // Initialize the timeline with the current date
+              generateDates(currentDate);
+
+              document.getElementById('showMoreBtn').addEventListener('click', function () {
+              const hiddenCards = document.querySelector('.hidden-cards');
+              if (hiddenCards.style.display === 'none') {
+                hiddenCards.style.display = 'flex'; // Show hidden cards
+                this.textContent = 'Show Less'; // Change button text
+              } else {
+                hiddenCards.style.display = 'none'; // Hide hidden cards
+                this.textContent = 'Show More'; // Reset button text
+              }
+              });
+
+
+          </script>
+
+          <script>  
+              function removeTag(tag) {
+              tag.remove();  // Removes the tag element
+            }
+          </script>
+            
+          <!-- <section class="contact-section section-padding" id="section_6">
+              <div class="container">
+                  <div class="row">
+                      
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                          <div class="card">
+                              <div class="img-avatar">
+                                  <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                              </div>
+                              <div class="card-text">
+                                  <div class="portada" style="background-image: url('images/aashi.jpeg');"></div>
+                                  <div class="title-total">
+                                      <div class="title">Dr. Aashifa</div>
+                                      <h2>Psychiatrist</h2>
+                                      <div class="desc">
+                                          <p><strong>Speaks</strong>: Hindi, Tamil, English, Malayalam</p>
+                                          <p><strong>Expertise</strong>: Talks a lot, Ranting nd Gossips as well</p>
+                                          <p><strong>Mode</strong>: Ava vetti thaan but naughty sisy</p>
+                                          <p><strong>Habits</strong>: Pesikitte irupa</p>
+                                      </div>
+                                      <div class="actions">
+                                          <button><i class="far fa-heart"></i></button>
+                                          <button><i class="far fa-envelope"></i></button>
+                                          <button><i class="fas fa-user-friends"></i></button>
+                                      </div>
+                                  </div>
+                                  <a href="your-booking-link.html" class="book-now-btn">Book Now</a>
+                              </div>
+                          </div>
+                      </div>
+          
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                          <div class="card">
+                              <div class="img-avatar">
+                                  <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                              </div>
+                              <div class="card-text">
+                                  <div class="portada" style="background-image: url('images/dim.jpg');"></div>
+                                  <div class="title-total">
+                                      <div class="title">Dr. Dhivya Lakshmi</div>
+                                      <h2>Psychiatrist</h2>
+                                      <div class="desc">
+                                          <p><strong>Speaks</strong>: Hindi, Tamil, English, Malayalam, Sourastra</p>
+                                          <p><strong>Expertise</strong>: Quite Talkative, Has all Knowledge</p>
+                                          <p><strong>Mode</strong>: Busy aa irukura mathiri katipa</p>
+                                          <p><strong>Habits</strong>: Nose nondifying</p>
+                                      </div>
+                                      <div class="actions">
+                                          <button><i class="far fa-heart"></i></button>
+                                          <button><i class="far fa-envelope"></i></button>
+                                          <button><i class="fas fa-user-friends"></i></button>
+                                      </div>
+                                  </div>
+                                  <a href="your-booking-link.html" class="book-now-btn">Book Now</a>
+                              </div>
+                          </div>
+                      </div>
+          
+                      <div class="col-lg-4 col-md-6 col-12 mb-4">
+                          <div class="card">
+                              <div class="img-avatar">
+                                  <img src="images/ava.png" alt="Avatar" class="avatar-img" />
+                              </div>
+                              <div class="card-text">
+                                  <div class="portada" style="background-image: url('images/jemi.jpg');"></div>
+                                  <div class="title-total">
+                                      <div class="title">Dr. Jeyanthi</div>
+                                      <h2>Psychiatrist</h2>
+                                      <div class="desc">
+                                          <p><strong>Speaks</strong>:Tamil, English, Telugu </p>
+                                          <p><strong>Expertise</strong>: Know for the consoling, Any issues contact her.</p>
+                                          <p><strong>Mode</strong>: Chats nd Over the phone call</p>
+                                          <p><strong>Habits</strong>: Ha ha Haasini</p>
+                                      </div>
+                                      <div class="actions">
+                                          <button><i class="far fa-heart"></i></button>
+                                          <button><i class="far fa-envelope"></i></button>
+                                          <button><i class="fas fa-user-friends"></i></button>
+                                      </div>
+                                  </div>
+                                  <a href="your-booking-link.html" class="book-now-btn">Book Now</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section> -->
+          
+                          
+
+
+      </main>
+
+          <footer class="new_footer_area bg_color">
+            <div class="new_footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                                <img src="images/ubat.jpg" alt="Yubat Logo" style="max-width: 150px; margin-bottom: 15px;">
+                                <p>Your Mental Health Companion</p>
+                                <!-- <div class="social-icons">
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div> -->
+                            </div>
+                            
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Quick Links</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Products</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Career</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                                <h3 class="f-title f_600 t_color f_size_18">Our Services</h3>
+                                <ul class="list-unstyled f_list">
+                                    <li><a href="#">Adult</a></li>
+                                    <li><a href="#">Addition</a></li>
+                                    <li><a href="#">Children</a></li>
+                                    <li><a href="#">Old-Age</a></li>
+                                    <li><a href="#">Sexual Wellness</a></li>
+                                    <li><a href="#">Adolescent</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                            <h3 class="f-title f_600 t_color f_size_18 d-flex align-items-center">
+                                Contact Us &nbsp;  &nbsp;  &nbsp;  &nbsp;
+                                <button type="button" class="btn btn-link p-0 ms-2" data-bs-toggle="modal" data-bs-target="#disclaimerModal" style="font-size: 18px; color: #007bff; text-decoration: none;">
+                                    <i class="bi bi-info-circle"></i>
+                                </button>
+                            </h3>
+                            <p class="text-black d-flex mb-2">
+                                <i class="bi bi-geo-alt me-2"></i>
+                                1st Floor, Insaaf Complex, Promenade Road, Melapudur, Cantonment, Tiruchirapalli - 620001.
+                            </p>
+                            <p class="text-black d-flex mb-2">
+                                <i class="bi bi-telephone me-2"></i>
+                                <a href="tel:+919916322222" class="site-footer-link">+91 9916322222</a>
+                            </p>
+                            <p class="text-black d-flex">
+                                <i class="bi bi-envelope me-2"></i>
+                                <a href="mailto:yubathealthcare@gmail.com" class="site-footer-link">yubathealthcare@gmail.com</a>
+                            </p>
+                            <p class="text-black d-flex mt-2">
+                                <i class="bi bi-globe me-2"></i>
+                                <a href="https://www.yubathealthcare.com" class="site-footer-link">www.yubathealthcare.com</a>
+                            </p>
+                        </div>
+        
+                        <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="disclaimerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl"> <!-- Changed to modal-xl for wider width -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="disclaimerModalLabel">Disclaimer</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="font-size: 0.9rem;"> <!-- Reduced font size -->
+                                        <ol>
+                                            <li>
+                                                Yubat does not handle medical or psychological emergencies. Our platform is not intended for providing assistance in urgent or crisis situations, such as when someone is experiencing suicidal thoughts, self-harm, or symptoms of severe mental health conditions like schizophrenia or other psychotic disorders.<br> 
+                                                In these instances, in-person medical care is the most suitable form of support.
+                                            </li>
+                                            <li>
+                                                If you are facing any of these challenges, we strongly encourage you to visit the nearest hospital or emergency room, where you can consult directly with a psychiatrist, social worker, counselor, or therapist. We also advise involving a supportive family member or friend who can be there for you.
+                                            </li>
+                                            <li>
+                                                For additional assistance, contact a suicide prevention hotline in your country: 
+                                                <a href="http://www.healthcollective.in/contact/helplines" target="_blank" style="color: blue; text-decoration: underline;">http://www.healthcollective.in/contact/helplines</a>.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="footer_bg">
+                    <div class="footer_bg_one"></div>
+                    <div class="footer_bg_two"></div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-sm-7">
+                            <p class="mb-0 f_400">Copyright © 2024 Yubat Health Care. All Rights Reserved.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center">
+                            <ul class="social-icon">
+                                <li class="social-icon-item"><a href="#" class="social-icon-link bi-facebook"></a></li>
+                                <li class="social-icon-item"><a href="#" class="social-icon-link bi-youtube"></a></li>
+                                <li class="social-icon-item"><a href="#" class="social-icon-link bi-linkedin"></a></li>
+                                <li class="social-icon-item"><a href="#" class="social-icon-link bi-instagram"></a></li>
+                                <li class="social-icon-item"><a href="#" class="social-icon-link bi-twitter"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/custom.js"></script>
+
+        <script>
+          document.getElementById('filter-button').addEventListener('click', function () {
+            var myModal = new bootstrap.Modal(document.getElementById('filterModal'));
+            myModal.show();
+          });
+          
+          // Handle category button clicks
+          document.getElementById('therapyBtn').addEventListener('click', function () {
+            document.getElementById('filterContent').innerHTML = `
+              <h5>Therapy Options</h5>
+              <ul>
+                <li><input type="checkbox" /> Therapy 1</li>
+                <li><input type="checkbox" /> Therapy 2</li>
+                <li><input type="checkbox" /> Therapy 3</li>
+              </ul>
+            `;
+          });
+          
+          document.getElementById('expertiseBtn').addEventListener('click', function () {
+            document.getElementById('filterContent').innerHTML = `
+              <h5>Expertise Options</h5>
+              <ul>
+                <li><input type="checkbox" /> Expertise 1</li>
+                <li><input type="checkbox" /> Expertise 2</li>
+                <li><input type="checkbox" /> Expertise 3</li>
+                <li><input type="checkbox" /> Expertise 4</li>
+                <li><input type="checkbox" /> Expertise 5</li>
+              </ul>
+            `;
+          });
+          
+          document.getElementById('priceBtn').addEventListener('click', function () {
+            document.getElementById('filterContent').innerHTML = `
+              <h5>Price Range</h5>
+              <ul>
+                <li><input type="radio" name="price" /> 800 - 1000</li>
+                <li><input type="radio" name="price" /> 1000 - 2000</li>
+                <li><input type="radio" name="price" /> Above 2000</li>
+              </ul>
+            `;
+          });
+          
+          document.getElementById('languageBtn').addEventListener('click', function () {
+            document.getElementById('filterContent').innerHTML = `
+              <h5>Language Options</h5>
+              <ul>
+                <li><input type="checkbox" /> English</li>
+                <li><input type="checkbox" /> Tamil</li>
+                <li><input type="checkbox" /> Hindi</li>
+                <li><input type="checkbox" /> Malayalam</li>
+                <li><input type="checkbox" /> Telugu</li>
+              </ul>
+            `;
+          });
+          
+          document.getElementById('genderBtn').addEventListener('click', function () {
+            document.getElementById('filterContent').innerHTML = `
+              <h5>Gender Options</h5>
+              <ul>
+                <li><input type="checkbox" /> Male</li>
+                <li><input type="checkbox" /> Female</li>
+                <li><input type="checkbox" /> Others</li>
+              </ul>
+            `;
+          });
+          document.getElementById("applyFilterBtn").addEventListener("click", function () {
+          // Capture selected filters
+          const selectedFilters = {};
+          document.querySelectorAll("input[type='radio']:checked").forEach((input) => {
+            selectedFilters[input.name] = input.value;
+          });
+
+          console.log("Selected Filters:", selectedFilters); // Example: Log selected filters
+
+          // Close the modal programmatically
+          const modal = bootstrap.Modal.getInstance(document.getElementById("filterModal"));
+          modal.hide();
+          });
+
+          // Clear All functionality
+          document.getElementById("clearAllBtn").addEventListener("click", function () {
+            document.querySelectorAll("input[type='radio']").forEach((input) => {
+              input.checked = false;
+            });
+          });
+        </script>
+
+    </body>
+</html>
