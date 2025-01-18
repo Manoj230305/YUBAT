@@ -3245,9 +3245,15 @@ h6 {
   position: relative;
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
+} */
+
+input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 10px;
 }
+
 .checkbox-tile {
   display: flex;
   flex-direction: column;
