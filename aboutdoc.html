@@ -297,43 +297,43 @@
 
       <section id="slider" data-aos="fade-up">
         <div class="container-fluid padding-side">
-          <div class="row align-items-center" style="height: 85vh">
+          <div class="row align-items-center" style="min-height: 85vh;">
             <!-- Left Image Section with Animation -->
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4 mb-md-0">
               <div class="image-container text-center">
                 <img
                   src="images/avatar/doctor.jpg"
                   alt="Doctor"
                   class="img-fluid rounded-5 animated-image"
-                  style="max-height: 100%; object-fit: cover"
+                  style="max-height: 100%; object-fit: cover; width: 100%;"
                 />
               </div>
             </div>
-
+      
             <!-- Right Form Section with Shadow Effect -->
             <div class="col-md-6">
               <form
                 id="form"
-                class="form-group bg-white p-5 rounded-4 mx-auto shadow-effect"
-                style="max-width: 500px"
+                class="form-group bg-white p-4 p-md-5 rounded-4 mx-auto shadow-effect"
+                style="max-width: 500px;"
               >
                 <h3
-                  class="display-6"
-                  style="font-family: 'Times New Roman', Times, serif"
+                  class="display-6 text-center"
+                  style="font-family: 'Times New Roman', Times, serif;"
                 >
                   Book the Appointment
                 </h3>
-
+      
                 <div
                   class="session-details mb-4 p-3 d-flex align-items-center bg-white border border-black custom-shadow"
-                  style="background-color: aliceblue"
+                  style="background-color: aliceblue;"
                 >
                   <div class="icon me-3">
                     <img
                       src="images/aashi.jpeg"
                       alt="Doctor"
                       class="rounded-circle"
-                      style="width: 50px; height: 50px; object-fit: cover"
+                      style="width: 50px; height: 50px; object-fit: cover;"
                     />
                   </div>
                   <div>
@@ -348,7 +348,7 @@
                     Change
                   </button>
                 </div>
-
+      
                 <!-- Date Input -->
                 <div class="mb-4">
                   <label class="form-label text-uppercase">Date</label>
@@ -359,7 +359,7 @@
                     placeholder="Select Date"
                   />
                 </div>
-
+      
                 <!-- Time Slots -->
                 <div class="mb-4">
                   <label class="form-label text-uppercase">Time Slots</label>
@@ -370,7 +370,7 @@
                     <div class="time-slot" data-value="12am">12 PM</div>
                   </div>
                 </div>
-
+      
                 <!-- Submit Button -->
                 <div class="d-grid">
                   <a href="login.html" class="btn btn-arrow btn-primary mt-3">
@@ -382,14 +382,15 @@
           </div>
         </div>
       </section>
+      
       <br />
-
+      
       <style>
         /* Animation for Image */
         .animated-image {
           animation: tilt-animation 5s infinite ease-in-out;
         }
-
+      
         @keyframes tilt-animation {
           0%,
           100% {
@@ -405,19 +406,55 @@
             transform: rotate(-2deg);
           }
         }
-
+      
         /* Shadow Effect for Form */
         .shadow-effect {
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2),
-            0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
+      
         .shadow-effect:hover {
-          box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3),
-            0 4px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.15);
           transition: box-shadow 0.3s ease-in-out;
         }
-      </style>
+      
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+          #slider .row {
+            flex-direction: column;
+            text-align: center;
+          }
+      
+          #slider .image-container img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+          }
+      
+          #slider .form-group {
+            margin: 0 auto;
+            padding: 20px;
+          }
+      
+          #slider {
+            padding-bottom: 50px; /* Adds space to avoid merging with the footer */
+          }
+        }
+      
+        @media (max-width: 576px) {
+          #slider .session-details {
+            flex-direction: column;
+            text-align: center;
+          }
+      
+          #slider .session-details .btn {
+            margin-top: 10px;
+          }
+      
+          #slider {
+            padding-bottom: 70px; /* More space for smaller screens */
+          }
+        }
+      </style>      
     </main>
 
     <footer class="new_footer_area bg_color">

@@ -268,7 +268,11 @@
                 <div class="booking-card shadow p-3 mb-3 w-100">
                   <div class="row align-items-center">
                     <div class="col-md-2 text-center">
-                      <img src="images/san.jpg" class="img-fluid rounded-circle booking-avatar" alt="Doctor Profile" />
+                      <img
+                        src="images/san.jpg"
+                        class="img-fluid rounded-circle booking-avatar"
+                        alt="Doctor Profile"
+                      />
                     </div>
                     <div class="col-md-1">
                       <div class="vr mx-auto" style="height: 100%; border-left: 1px solid #ccc;"></div>
@@ -283,9 +287,6 @@
                       <p class="booking-date-time mb-1">
                         <i class="fas fa-calendar-alt text-success me-1"></i> Thu, 02 Jan 2025, 10:30 AM IST (60 mins)
                       </p>
-                      <!-- <p class="booking-mode mb-0">
-                        <i class="fas fa-video text-warning me-1"></i> Online
-                      </p> -->
                     </div>
                     <div class="col-md-2 text-center">
                       <span class="badge booking-status pending">
@@ -304,7 +305,11 @@
                 <div class="booking-card shadow p-3 mb-3 w-100">
                   <div class="row align-items-center">
                     <div class="col-md-2 text-center">
-                      <img src="images/vnew.jpg" class="img-fluid rounded-circle booking-avatar" alt="Doctor Profile" />
+                      <img
+                        src="images/vnew.jpg"
+                        class="img-fluid rounded-circle booking-avatar"
+                        alt="Doctor Profile"
+                      />
                     </div>
                     <div class="col-md-1">
                       <div class="vr mx-auto" style="height: 100%; border-left: 1px solid #ccc;"></div>
@@ -319,9 +324,6 @@
                       <p class="booking-date-time mb-1">
                         <i class="fas fa-calendar-alt text-success me-1"></i> Mon, 30 Dec 2025, 3:00 PM IST (60 mins)
                       </p>
-                      <!-- <p class="booking-mode mb-0">
-                        <i class="fas fa-video text-warning me-1"></i> Online
-                      </p> -->
                     </div>
                     <div class="col-md-2 text-center">
                       <span class="badge booking-status declined">
@@ -339,57 +341,125 @@
             </div>
           </div>
           
+          <style>
+            /* General Styles */
+            .booking-card {
+              background-color: #fff;
+              border-radius: 10px;
+              overflow: hidden;
+            }
+          
+            .booking-avatar {
+              width: 80px;
+              height: 80px;
+              object-fit: cover;
+            }
+          
+            .booking-status {
+              display: inline-block;
+              font-size: 0.875rem;
+              padding: 5px 10px;
+              border-radius: 15px;
+            }
+          
+            .booking-status.pending {
+              background-color: #ffe6e6;
+              color: #d9534f;
+            }
+          
+            .booking-status.declined {
+              background-color: #f8d7da;
+              color: #721c24;
+            }
+          
+            .btn-outline-gray {
+              color: #6c757d;
+              border-color: #6c757d;
+            }
+          
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+              .booking-card .row {
+                flex-direction: column;
+                text-align: center;
+              }
+          
+              .booking-avatar {
+                margin: 0 auto;
+              }
+          
+              .vr {
+                display: none;
+              }
+          
+              .col-md-5,
+              .col-md-2 {
+                text-align: center;
+              }
+          
+              .btn {
+                margin-top: 10px;
+              }
+          
+              .booking-status {
+                margin: 10px 0;
+              }
+            }
+          </style>
           
           
         
           <div class="tab-pane fade" id="invoices-tab-pane" role="tabpanel" aria-labelledby="invoices-tab">
             <div class="container mt-3">
               <h3 class="mb-3">Your Invoices</h3>
-              <table class="table table-hover align-middle">
-                <thead class="table-light">
-                  <tr>
-                    <th>Invoice #</th>
-                    <th>Date</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>INV-001</td>
-                    <td>2024-12-31</td>
-                    <td>Rs. 800</td>
-                    <td>
-                      <span class="badge bg-success">
-                        <i class="fas fa-check-circle me-1"></i> Completed
-                      </span>
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-outline-gray">
-                        <i class="fas fa-download me-1"></i> Download
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>INV-002</td>
-                    <td>2025-01-01</td>
-                    <td>Rs. 1250</td>
-                    <td>
-                      <span class="badge bg-warning text-dark">
-                        <i class="fas fa-clock me-1"></i> Scheduled
-                      </span>
-                    </td>
-                    <td>
-                      <button class="btn btn-sm btn-outline-gray">
-                        <i class="fas fa-download me-1"></i> Download
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Invoice #</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>INV-001</td>
+                      <td>2024-12-31</td>
+                      <td>Rs. 800</td>
+                      <td>
+                        <span class="badge bg-success">
+                          <i class="fas fa-check-circle me-1"></i> Completed
+                        </span>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-outline-gray">
+                          <i class="fas fa-download me-1"></i> Download
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>INV-002</td>
+                      <td>2025-01-01</td>
+                      <td>Rs. 1250</td>
+                      <td>
+                        <span class="badge bg-warning text-dark">
+                          <i class="fas fa-clock me-1"></i> Scheduled
+                        </span>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-outline-gray">
+                          <i class="fas fa-download me-1"></i> Download
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
+          
           
           <!-- </div> -->
         </section>
