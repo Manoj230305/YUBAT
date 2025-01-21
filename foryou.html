@@ -282,144 +282,138 @@
         <legend class="checkbox-group-legend">
           Select options to help us know more about you to support you better
         </legend>
-
+    
         <br /><br />
-
+    
+        <!-- Options -->
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Family concerns" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-home fa-xl" aria-hidden="true"></i>
-                <!-- Family concerns -->
               </span>
               <span class="checkbox-label">Family concerns</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Anxiety" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-heartbeat fa-xl" aria-hidden="true"></i>
-                <!-- Anxiety -->
               </span>
               <span class="checkbox-label">Anxiety</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Anger issues" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-bolt fa-xl" aria-hidden="true"></i>
-                <!-- Anger issues -->
               </span>
               <span class="checkbox-label">Anger issues</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Depression" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-frown fa-xl" aria-hidden="true"></i>
-                <!-- Depression -->
               </span>
               <span class="checkbox-label">Depression</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Exhausted" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-bed fa-xl" aria-hidden="true"></i>
-                <!-- Exhausted -->
               </span>
               <span class="checkbox-label">Exhausted</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="No interest" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-ban fa-xl" aria-hidden="true"></i>
-                <!-- No interest -->
               </span>
               <span class="checkbox-label">No interest</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Relationship issue" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-heart fa-xl" aria-hidden="true"></i>
-                <!-- Relationship issue -->
               </span>
               <span class="checkbox-label">Relationship issue</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Trust issues" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-lock fa-xl" aria-hidden="true"></i>
-                <!-- Trust issues -->
               </span>
               <span class="checkbox-label">Trust issues</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Fear" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-user-secret fa-xl" aria-hidden="true"></i>
-                <!-- Fear -->
               </span>
               <span class="checkbox-label">Fear</span>
             </span>
           </label>
         </div>
-
+    
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" />
+            <input type="checkbox" class="checkbox-input" value="Loss" />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-umbrella fa-xl" aria-hidden="true"></i>
-                <!-- Loss -->
               </span>
               <span class="checkbox-label">Loss</span>
             </span>
           </label>
         </div>
+    
+        <br />
+        <!-- <button id="submit-btn" onclick="saveOptions()">Submit</button> -->
       </fieldset>
       <br />
       <li class="ms-6 col-xl-12 col-md-4 d-flex justify-content-center">
         <a
           class="nav-link custom-btn custom-border-btn btn"
-          href="doctorlist.html"
+          href="doctorlist.html" onclick="saveOptions()"
         >
           Proceed
         </a>
@@ -662,6 +656,20 @@
           box.classList.toggle("selected");
         });
       });
+    </script>
+    <script>
+      function saveOptions() {
+        // Get all selected checkboxes
+        const selectedOptions = [...document.querySelectorAll('input[type="checkbox"]:checked')].map(
+          (checkbox) => checkbox.value
+        );
+  
+        // Save selected options in localStorage
+        localStorage.setItem('selectedOptions', JSON.stringify(selectedOptions));
+  
+        // Navigate to the second page
+        window.location.href = 'doctorlist.html';
+      }
     </script>
   </body>
 </html>
