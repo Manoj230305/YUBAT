@@ -12,105 +12,94 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/login_signup.css" />
   </head>
 
-  <body>
-    <div class="container" id="container">
-      <div class="form-container sign-up-container">
-        <form action="#">
-          <h1>Create Account</h1>
-          <!-- <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div> -->
-          <!-- <span>or use your email for registration</span> -->
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <input type="password" placeholder="Confirm Password" />
-          <button type="button" id="next-button">
-            <a href="form.html">Next</a>
-          </button>
-        </form>
+  <body id="logbody" style="background-image: url(images/bglogin.png)">
+    <a href="doctorlist (1).html" class="back-button"> <i class="fas fa-arrow-left"></i> Back </a>
+    <div class="lg-container">
+      <div class="lg-image-container">
+        <img src="images/ak2.png" alt="Desk Image" />
       </div>
-
-      <div class="form-container log-in-container">
-        <form action="#">
-          <h1>Log in</h1>
-          <!-- <div class="social-container">
-            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-          </div> -->
-          <span>or use your account</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <a href="#">Forgot your password?</a>
-          <button type="button">
-            <a href="form.html" style="color: white">Next</a>
-          </button>
+      <div class="lg-form-container">
+        <h1 id="lg-form-heading">Sign up</h1>
+        <form id="lg-form">
+          <div class="lg-input-group" id="lg-name-field">
+            <i class="fas fa-user" style="color: rgb(65, 65, 69)"></i>
+            <input type="text" id="lg-name" placeholder="Your Name" required />
+          </div>
+          <div class="lg-input-group">
+            <i class="fas fa-envelope" style="color: rgb(65, 65, 69)"></i>
+            <input
+              type="email"
+              id="lg-email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="lg-input-group">
+            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
+            <input
+              type="password"
+              id="lg-password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="lg-input-group" id="lg-confirm-password-field">
+            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
+            <input
+              type="password"
+              id="lg-confirm-password"
+              placeholder="Repeat your password"
+              required
+            />
+          </div>
+          <div class="lg-checkbox-group" id="lg-terms-field">
+            <input type="checkbox" id="lg-terms" required />
+            <label for="lg-terms"
+              >I agree all statements in <a href="#">Terms of service</a></label
+            >
+          </div>
+          <a href="form.html"   class="lg-button"> </i> Register </a>
+          
         </form>
-      </div>
-      <div class="overlay-container">
-        <div class="overlay">
-          <div class="overlay-panel overlay-left">
-            <div class="login100-pic js-tilt" id="tiltImage1" data-tilt>
-              <img src="images/ak2.png" alt="IMG" />
-            </div>
-            <h1>Welcome Back!</h1>
-            <p>Already have an account? Log In</p>
-            <button class="ghost" id="logIn">Log In</button>
-          </div>
-          <div class="overlay-panel overlay-right">
-            <div class="login100-pic js-tilt" id="tiltImage" data-tilt>
-              <img src="images/ak2.png" alt="IMG" />
-            </div>
-            <h1>Hello, There!</h1>
-            <p>Don't have an account? Sign Up</p>
-            <button class="ghost" id="signUp">Sign Up</button>
-          </div>
-        </div>
+        <br />
+        <p><a href="#" id="lg-already-member-link">I am already a member</a></p>
       </div>
     </div>
-
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
-    <script src="../Login/js/tilt.jquery.min.js"></script>
     <script>
-      $(".js-tilt").tilt({
-        scale: 1.1,
-      });
-    </script>
-
-    <script>
-      // JavaScript to add the tilt effect
       document
-        .getElementById("tiltImage")
-        .addEventListener("mouseover", function () {
-          this.classList.add("tilted");
-        });
+        .getElementById("lg-already-member-link")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
 
-      document
-        .getElementById("tiltImage")
-        .addEventListener("mouseout", function () {
-          this.classList.remove("tilted");
-        });
-    </script>
+          const container = document.querySelector(".lg-container");
+          const formHeading = document.getElementById("lg-form-heading");
+          const nameField = document.getElementById("lg-name-field");
+          const confirmPasswordField = document.getElementById(
+            "lg-confirm-password-field"
+          );
+          const divert = document.getElementById("lg-already-member-link");
+          const termsField = document.getElementById("lg-terms-field");
+          const registerButton = document.querySelector(".lg-button");
 
-    <script>
-      // JavaScript to add the tilt effect
-      document
-        .getElementById("tiltImage1")
-        .addEventListener("mouseover", function () {
-          this.classList.add("tilted");
-        });
+          container.classList.toggle("shifted");
 
-      document
-        .getElementById("tiltImage1")
-        .addEventListener("mouseout", function () {
-          this.classList.remove("tilted");
+          if (container.classList.contains("shifted")) {
+            formHeading.textContent = "Log in";
+            nameField.style.display = "none";
+            confirmPasswordField.style.display = "none";
+            termsField.style.display = "none";
+            registerButton.textContent = "Log in";
+            divert.textContent = "Create new account";
+          } else {
+            formHeading.textContent = "Sign up";
+            nameField.style.display = "block";
+            confirmPasswordField.style.display = "block";
+            termsField.style.display = "flex";
+            registerButton.textContent = "Register";
+          }
         });
     </script>
   </body>
