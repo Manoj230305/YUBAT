@@ -953,8 +953,8 @@ blockquote::before {
   display: inline-block;
   font-size: 14px; /* Small size */
   font-weight: 500; /* Slightly bold for better visibility */
-  color: #333; /* Neutral text color */
-  background-color: #c7d7d5; /* Light background for contrast */
+  color: #fff; /* Neutral text color */
+  background-color: #343a40; /* Light background for contrast */
   padding: 6px 12px; /* Compact padding */
   margin: 4px; /* Smaller spacing between tags */
   transition: all 0.3s ease;
@@ -962,10 +962,9 @@ blockquote::before {
 
 .tags-block-link:hover {
   border-color: #343a40; /* Darker border on hover */
-  color: #fff; /* White text on hover */
-  background-color: #343a40; /* Dark background on hover */
+  color: #333333; /* White text on hover */
+  background-color: #c7d7d5; /* Dark background on hover */
 }
-
 .tags-block-link span {
   margin-left: 5px; /* Space between text and the icon */
   font-size: 14px; /* Slightly larger icon */
