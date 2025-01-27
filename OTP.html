@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/login_signup.css" />
+  </head>
+
+  <body id="logbody" style="background-image: url(images/bglogin.png)">
+    <a href="doctorlist (1).html" class="back-button"> <i class="fas fa-arrow-left"></i> Back </a>
+    <div class="lg-container">
+      <div class="lg-image-container">
+        <img src="images/ak2.png" alt="Desk Image" />
+      </div>
+      <div class="lg-form-container">
+        <h1 id="lg-form-heading">OTP Verification</h1>
+        <form id="lg-form">
+          <div class="lg-input-group">
+            <i class="fas fa-envelope" style="color: rgb(65, 65, 69);"></i>
+            <input
+              type="email"
+              id="lg-email"
+              class="lg-email-input"
+              placeholder="Enter Your Email"
+              required
+            />
+          </div>
+          <div class="lg-input-group">
+            <button type="button" id="send-otp-button" class="lg-button">
+              Send OTP
+            </button>
+          </div>
+        </form>
+        <div id="otp-container" style="display: none; margin-top: 20px;">
+          <p class="otp-instruction">Enter the 4-digit verification code sent to your email</p>
+          <div class="otp-box-container">
+            <input type="text" maxlength="1" class="otp-box" id="otp-1" />
+            <input type="text" maxlength="1" class="otp-box" id="otp-2" />
+            <input type="text" maxlength="1" class="otp-box" id="otp-3" />
+            <input type="text" maxlength="1" class="otp-box" id="otp-4" />
+          </div>
+          <div class="lg-input-group">
+            <button type="button" id="verify-otp-button" class="lg-button">
+              Verify OTP
+            </button>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <style>
+      .lg-form-container {
+        width: 400px;
+        margin: auto;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+    
+      #lg-form-heading {
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 20px;
+      }
+    
+      .lg-input-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+    
+      .lg-input-group i {
+        margin-right: 8px;
+      }
+    
+      .lg-email-input {
+        width: calc(100% - 30px);
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+    
+      .lg-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #d99ad8;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+    
+      .lg-button:hover {
+        background-color: #a04598;
+      }
+    
+      .otp-box-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+    
+      .otp-box {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 24px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        outline: none;
+        transition: border-color 0.3s;
+      }
+    
+      .otp-box:focus {
+        border-color: #4caf50;
+      }
+    
+      .otp-instruction {
+        font-size: 14px;
+        color: #666666;
+        margin-bottom: 10px;
+      }
+    </style>
+
+      
+      <script>
+        const sendOtpButton = document.getElementById("send-otp-button");
+        const otpContainer = document.getElementById("otp-container");
+        const otpInputs = document.querySelectorAll(".otp-box");
+
+        sendOtpButton.addEventListener("click", function () {
+          alert("OTP sent to your email!");
+          otpContainer.style.display = "block";
+          otpInputs[0].focus();
+        });
+
+        // Automatically move to the next input box
+        otpInputs.forEach((input, index) => {
+          input.addEventListener("input", function () {
+            if (input.value.length === 1 && index < otpInputs.length - 1) {
+              otpInputs[index + 1].focus();
+            }
+          });
+
+          input.addEventListener("keydown", function (event) {
+            if (event.key === "Backspace" && index > 0 && input.value === "") {
+              otpInputs[index - 1].focus();
+            }
+          });
+        });
+
+        document.getElementById("verify-otp-button").addEventListener("click", function () {
+          const otp = Array.from(otpInputs).map((input) => input.value).join("");
+          if (otp === "1234") {
+            alert("OTP Verified Successfully!");
+          } else {
+            alert("Invalid OTP. Please try again.");
+          }
+        });
+      </script>
+  </body>
+</html>
