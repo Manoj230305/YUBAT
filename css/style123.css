@@ -2709,14 +2709,17 @@ h6 {
 .rounded-box p {
   color: #555; /* Slightly muted text color */
 }
-
-
-.time-slots {
+/* Carousel container */
+.time-slots-carousel {
   display: flex;
-  gap: 10px; /* Space between the tags */
-  flex-wrap: wrap;
+  gap: 10px; /* Space between the slots */
+  overflow-x: auto; /* Horizontal scroll enabled */
+  padding: 10px 0;
+  scroll-behavior: smooth; /* Smooth scrolling */
+  white-space: nowrap; /* Prevents wrapping */
 }
 
+/* Time slot styling */
 .time-slot {
   padding: 10px 20px;
   border: 1px solid #ccc;
@@ -2726,14 +2729,113 @@ h6 {
   transition: background-color 0.3s, color 0.3s;
   font-size: 16px;
   color: #333;
+  display: inline-block; /* Keeps elements inline */
 }
 
+/* Hover effect */
 .time-slot:hover {
   background-color: #f0f0f0;
 }
 
+/* Active state styling */
 .time-slot.active {
   background-color: #d080c5;
   color: #fff;
   border-color: #9a7294;
+}
+
+/* Hide scrollbar */
+.time-slots-carousel::-webkit-scrollbar {
+  display: none;
+}
+.checked {
+  color: orange;
+}
+
+.specializations {
+  display: flex;
+  flex-wrap: wrap; /* Allows tags to wrap to the next line */
+  gap: 8px; /* Space between tags */
+  margin-top: 8px;
+}
+
+.ab-tag {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #fff0fc;
+  border: 1px solid #d1e7ff;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #4e4b4b;
+  line-height: 1;
+}
+
+/* Animation for Image */
+.animated-image {
+  animation: tilt-animation 5s infinite ease-in-out;
+}
+
+@keyframes tilt-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+
+/* Shadow Effect for Form */
+.shadow-effect {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-effect:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  #slider .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #slider .image-container img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  #slider .form-group {
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  #slider {
+    padding-bottom: 50px; /* Adds space to avoid merging with the footer */
+  }
+}
+
+@media (max-width: 576px) {
+  #slider .session-details {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #slider .session-details .btn {
+    margin-top: 10px;
+  }
+
+  #slider {
+    padding-bottom: 70px; /* More space for smaller screens */
+  }
 }

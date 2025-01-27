@@ -276,19 +276,21 @@
 
       <!-- /Hero Section -->
 
-      <br /><br />
-
       <fieldset class="checkbox-group">
         <legend class="checkbox-group-legend">
-          Select options to help us know more about you to support you better
+          Help us support your journey better by selecting options below
         </legend>
-    
+
         <br /><br />
-    
+
         <!-- Options -->
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" value="Family concerns" />
+            <input
+              type="checkbox"
+              class="checkbox-input"
+              value="Family concerns"
+            />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-home fa-xl" aria-hidden="true"></i>
@@ -297,7 +299,7 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
             <input type="checkbox" class="checkbox-input" value="Anxiety" />
@@ -309,10 +311,14 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" value="Anger issues" />
+            <input
+              type="checkbox"
+              class="checkbox-input"
+              value="Anger issues"
+            />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-bolt fa-xl" aria-hidden="true"></i>
@@ -321,7 +327,7 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
             <input type="checkbox" class="checkbox-input" value="Depression" />
@@ -333,7 +339,7 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
             <input type="checkbox" class="checkbox-input" value="Exhausted" />
@@ -345,7 +351,7 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
             <input type="checkbox" class="checkbox-input" value="No interest" />
@@ -357,10 +363,14 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" value="Relationship issue" />
+            <input
+              type="checkbox"
+              class="checkbox-input"
+              value="Relationship issue"
+            />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-heart fa-xl" aria-hidden="true"></i>
@@ -369,10 +379,14 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
-            <input type="checkbox" class="checkbox-input" value="Trust issues" />
+            <input
+              type="checkbox"
+              class="checkbox-input"
+              value="Trust issues"
+            />
             <span class="checkbox-tile">
               <span class="checkbox-icon">
                 <i class="fa fa-lock fa-xl" aria-hidden="true"></i>
@@ -381,7 +395,7 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
             <input type="checkbox" class="checkbox-input" value="Fear" />
@@ -393,7 +407,7 @@
             </span>
           </label>
         </div>
-    
+
         <div class="checkbox">
           <label class="checkbox-wrapper">
             <input type="checkbox" class="checkbox-input" value="Loss" />
@@ -405,17 +419,15 @@
             </span>
           </label>
         </div>
-    
-        <br />
-        <!-- <button id="submit-btn" onclick="saveOptions()">Submit</button> -->
       </fieldset>
-      <br />
+      <br /><br />
       <li class="ms-6 col-xl-12 col-md-4 d-flex justify-content-center">
         <a
           class="nav-link custom-btn custom-border-btn btn"
-          href="doctorlist.html" onclick="saveOptions()"
+          href="doctorlist.html"
+          onclick="saveOptions()"
         >
-          Proceed
+          Find a Therapist
         </a>
       </li>
     </main>
@@ -660,15 +672,18 @@
     <script>
       function saveOptions() {
         // Get all selected checkboxes
-        const selectedOptions = [...document.querySelectorAll('input[type="checkbox"]:checked')].map(
-          (checkbox) => checkbox.value
-        );
-  
+        const selectedOptions = [
+          ...document.querySelectorAll('input[type="checkbox"]:checked'),
+        ].map((checkbox) => checkbox.value);
+
         // Save selected options in localStorage
-        localStorage.setItem('selectedOptions', JSON.stringify(selectedOptions));
-  
+        localStorage.setItem(
+          "selectedOptions",
+          JSON.stringify(selectedOptions)
+        );
+
         // Navigate to the second page
-        window.location.href = 'doctorlist.html';
+        window.location.href = "doctorlist.html";
       }
     </script>
   </body>
