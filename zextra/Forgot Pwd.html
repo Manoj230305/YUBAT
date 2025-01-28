@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/login_signup.css" />
+  </head>
+
+  <body id="logbody" style="background-image: url(images/bglogin.png)">
+    <a href="doctorlist (1).html" class="back-button"> <i class="fas fa-arrow-left"></i> Back </a>
+    <div class="lg-container">
+      <div class="lg-image-container">
+        <img src="images/ak2.png" alt="Desk Image" />
+      </div>
+      <div class="lg-form-container">
+        <h1 id="lg-form-heading">Forgot Password</h1>
+        <form id="lg-form">
+          <div class="lg-input-group">
+            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
+            <input
+              type="password"
+              id="lg-new-password"
+              placeholder="Enter New Password"
+              required
+            />
+          </div>
+          <div class="lg-input-group">
+            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
+            <input
+              type="password"
+              id="lg-confirm-new-password"
+              placeholder="Re-enter New Password"
+              required
+            />
+          </div>
+          <div class="lg-input-group">
+            <button type="button" id="reset-password-button" class="lg-button">
+              Reset Password
+            </button>
+          </div>
+        </form>
+        <br />
+        <p><a href="login.html" id="lg-back-to-login-link">Back to Login</a></p>
+      </div>
+    </div>
+    
+    <style>
+      .lg-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        font-family: Arial, sans-serif;
+      }
+    
+      .lg-image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    
+      .lg-form-container {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+        width: 200px;
+        text-align: center;
+      }
+    
+      #lg-form-heading {
+        font-size: 24px;
+        color: #333333;
+        margin-bottom: 20px;
+      }
+    
+      .lg-input-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+    
+      .lg-input-group i {
+        margin-right: 8px;
+      }
+    
+      .lg-input-group input {
+        width: calc(100% - 30px);
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+    
+      .lg-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #d99ad8;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+    
+      .lg-button:hover {
+        background-color: #a04598;
+      }
+    
+      #lg-back-to-login-link {
+        font-size: 14px;
+        color: #666666;
+        text-decoration: none;
+      }
+    
+      #lg-back-to-login-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+    
+    <script>
+      const resetPasswordButton = document.getElementById("reset-password-button");
+    
+      resetPasswordButton.addEventListener("click", function () {
+        const newPassword = document.getElementById("lg-new-password").value;
+        const confirmPassword = document.getElementById("lg-confirm-new-password").value;
+    
+        if (newPassword === confirmPassword) {
+          alert("Password reset successfully!");
+          // Add logic to handle password reset here
+        } else {
+          alert("Passwords do not match. Please try again.");
+        }
+      });
+    </script>
+    
+    
+  </body>
+</html>

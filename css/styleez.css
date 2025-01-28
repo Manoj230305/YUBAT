@@ -2067,7 +2067,7 @@ button:hover {
 }
 
 .btn-filter {
-  background-color: #9dc6d2;
+  background-color: #333333;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -2079,7 +2079,7 @@ button:hover {
 }
 
 .btn-filter:hover {
-  background-color: #b9e6f6;
+  background-color: #a6b8bf;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 

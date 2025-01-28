@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/login_signup.css" />
+  </head>
+
+  <body id="logbody" style="background-image: url(images/bglogin.png)">
+    <a href="login.html" class="back-button"> <i class="fas fa-arrow-left"></i> Back </a>
+    <div class="lg-container">
+      <div class="lg-image-container">
+        <img src="images/ak2.png" alt="Desk Image" />
+      </div>
+      <div class="lg-form-container">
+        <h1 id="lg-form-heading">Forgot Password</h1>
+        <form id="lg-form">
+          <div class="lg-input-group">
+            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
+            <input
+              type="password"
+              id="lg-password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="lg-input-group" id="lg-confirm-password-field">
+            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
+            <input
+              type="password"
+              id="lg-confirm-password"
+              placeholder="Confirm password"
+              required
+            />
+          </div>
+          <a href="form.html"   class="lg-button"> </i> Save Password </a>
+          <p><a href="login.html" id="lg-back-to-login-link">Back to Login</a></p>
+
+          
+        </form>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>

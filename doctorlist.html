@@ -229,7 +229,7 @@
             </div>
 
             <!-- Right Section: Search Box -->
-            <div class="col-lg-4 col-12">
+            <div class="col-lg-4 col-12 filter-search-wrapper">
               <form
                 class="custom-form search-form"
                 action="#"
@@ -242,14 +242,24 @@
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button type="submit" class="form-control">
+                <button type="submit" class="form-control search-btn">
                   <i class="bi-search"></i>
                 </button>
               </form>
+              <button
+                class="btn btn-filter"
+                id="filter-button"
+                style="padding: 8px 18px; float: right; margin-top: 10px;"
+              >
+                <i class="bi-filter"></i>
+                Filter
+              </button>
+
             </div>
+            
 
             <!-- Tags Block -->
-            <div class="row align-items-center mt-4">
+            <div class="row align-items-center mt-10">
               <!-- Tags Block -->
               <!-- <div class="col-lg-10 col-12">
                 <div class="tags-block d-flex flex-wrap">
@@ -270,13 +280,13 @@
                   </a>
                 </div>
               </div> -->
-              <div class="col-lg-10 col-12">
+              <div class="col-lg-10 col-12 mt-10">
                 <div class="tags-block d-flex flex-wrap" id="tags-container">
                   <!-- Dynamic content will be added here -->
                 </div>
               </div>
               <!-- Filter Option -->
-              <div class="col-lg-2 col-12">
+              <!-- <div class="col-lg-2 col-12">
                 <button
                   class="btn btn-filter w-100 d-flex align-items-center justify-content-center"
                   id="filter-button"
@@ -284,7 +294,7 @@
                   <i class="bi-filter me-2"></i>
                   Filter
                 </button>
-              </div>
+              </div> -->
 
               <!-- Modal for Filter -->
               <div
@@ -329,7 +339,7 @@
 
                       <!-- Right side content -->
                       <div id="filterContent">
-                        <h5>For You</h5>
+                        <!-- <h5>For You</h5>
                         <ul>
                           <li>
                             <input type="radio" name="therapy" value="you" />
@@ -351,7 +361,7 @@
                             <input type="radio" name="therapy" value="family" />
                             For You & Your Family
                           </li>
-                        </ul>
+                        </ul> -->
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -378,63 +388,7 @@
         </div>
       </section>
 
-      <script>
-        const dateContainer = document.getElementById("date-container");
-        const prevDateBtn = document.getElementById("prev-date-btn");
-        const nextDateBtn = document.getElementById("next-date-btn");
-        let currentDate = new Date();
-
-        function generateDates(startDate) {
-          dateContainer.innerHTML = "";
-          for (let i = -2; i <= 2; i++) {
-            const date = new Date(startDate);
-            date.setDate(startDate.getDate() + i);
-
-            const day = date.toLocaleString("en-US", { weekday: "short" });
-            const dayNum = date.getDate();
-            const month = date.toLocaleString("en-US", { month: "short" });
-
-            const dateItem = document.createElement("div");
-            dateItem.classList.add("date-item", "text-center");
-            if (i === 0) dateItem.classList.add("selected");
-
-            dateItem.innerHTML = `
-                    <div class="day fw-bold">${day}</div>
-                    <div class="date fs-4 fw-bold">${dayNum}</div>
-                    <div class="month">${month}</div>
-                  `;
-
-            dateItem.addEventListener("click", () => {
-              document.querySelectorAll(".date-item").forEach((item) => {
-                item.classList.remove("selected");
-              });
-              dateItem.classList.add("selected");
-            });
-
-            dateContainer.appendChild(dateItem);
-          }
-        }
-
-        // Update dates when navigation buttons are clicked
-        prevDateBtn.addEventListener("click", () => {
-          currentDate.setDate(currentDate.getDate() - 1);
-          generateDates(currentDate);
-        });
-
-        nextDateBtn.addEventListener("click", () => {
-          currentDate.setDate(currentDate.getDate() + 1);
-          generateDates(currentDate);
-        });
-
-        // Initialize the timeline with the current date
-        generateDates(currentDate);
-      </script>
-
-      <script>
-        function removeTag(tag) {
-          tag.remove(); // Removes the tag element
-        }
-      </script>
+      
     </main>
     <main class="main">
       <!-- Team Section -->
@@ -825,17 +779,29 @@
           );
           myModal.show();
         });
-
+      // Set default therapy content on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("filterContent").innerHTML = `
+          <h5>Therapy Options</h5>
+          <ul>
+            <li><input type="radio" name="therapy" /> For You</li>
+            <li><input type="radio" name="therapy" /> For You & Your Partner</li>
+            <li><input type="radio" name="therapy" /> For You & Your Children</li>
+            <li><input type="radio" name="therapy" /> For You & Your Family</li>
+          </ul>
+        `;
+      });
       // Handle category button clicks
       document
         .getElementById("therapyBtn")
         .addEventListener("click", function () {
-          document.getElementById("filterCoFntent").innerHTML = `
+          document.getElementById("filterContent").innerHTML = `
               <h5>Therapy Options</h5>
               <ul>
-                <li><input type="checkbox" /> Therapy 1</li>
-                <li><input type="checkbox" /> Therapy 2</li>
-                <li><input type="checkbox" /> Therapy 3</li>
+                <li><input type="radio" /> For You</li>
+                <li><input type="radio" /> For You & your partner</li>
+                <li><input type="radio" /> For You & Your Children</li>
+                <li><input type="radio" /> For You & Your Family</li>
               </ul>
             `;
         });
@@ -944,6 +910,64 @@
       // Function to remove tag
       function removeTag(tagElement) {
         tagsContainer.removeChild(tagElement);
+      }
+    </script>
+
+    <script>
+      const dateContainer = document.getElementById("date-container");
+      const prevDateBtn = document.getElementById("prev-date-btn");
+      const nextDateBtn = document.getElementById("next-date-btn");
+      let currentDate = new Date();
+
+      function generateDates(startDate) {
+        dateContainer.innerHTML = "";
+        for (let i = 0; i <= 4; i++) {
+          const date = new Date(startDate);
+          date.setDate(startDate.getDate() + i);
+
+          const day = date.toLocaleString("en-US", { weekday: "short" });
+          const dayNum = date.getDate();
+          const month = date.toLocaleString("en-US", { month: "short" });
+
+          const dateItem = document.createElement("div");
+          dateItem.classList.add("date-item", "text-center");
+          if (i === 0) dateItem.classList.add("selected");
+
+          dateItem.innerHTML = `
+                  <div class="day fw-bold">${day}</div>
+                  <div class="date fs-4 fw-bold">${dayNum}</div>
+                  <div class="month">${month}</div>
+                `;
+
+          dateItem.addEventListener("click", () => {
+            document.querySelectorAll(".date-item").forEach((item) => {
+              item.classList.remove("selected");
+            });
+            dateItem.classList.add("selected");
+          });
+
+          dateContainer.appendChild(dateItem);
+        }
+      }
+
+      // Update dates when navigation buttons are clicked
+      prevDateBtn.addEventListener("click", () => {
+        currentDate.setDate(currentDate.getDate() - 1);
+        generateDates(currentDate);
+      });
+
+      nextDateBtn.addEventListener("click", () => {
+        currentDate.setDate(currentDate.getDate() + 1);
+        generateDates(currentDate);
+      });
+
+      // Initialize the timeline with the current date
+      generateDates(currentDate);
+    </script>
+
+    <script>
+      function removeTag(tag) {
+        tag.remove(); // Removes the tag element
       }
     </script>
     <a
