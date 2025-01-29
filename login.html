@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link rel="stylesheet" href="css/login_signup.css" />
-  </head>
+   
+</head>
+<body id="logbody" style="background-image: url(images/bglogin.png)">
 
-  <body id="logbody" style="background-image: url(images/bglogin.png)">
-    <a href="doctorlist (1).html" class="back-button"> <i class="fas fa-arrow-left"></i> Back </a>
+  <div class="tiny-back">
+    <a href="doctorlist.html"><i class="fas fa-arrow-left"></i> Back</a>
+</div>
+
     <div class="lg-container">
-      <div class="lg-image-container">
-        <img src="images/ak2.png" alt="Desk Image" />
-      </div>
-      <div class="lg-form-container">
-        <h1 id="lg-form-heading">Sign up</h1>
-        <form id="lg-form">
-          <div class="lg-input-group" id="lg-name-field">
-            <i class="fas fa-user" style="color: rgb(65, 65, 69)"></i>
-            <input type="text" id="lg-name" placeholder="Your Name" required />
-          </div>
-          <div class="lg-input-group">
-            <i class="fas fa-envelope" style="color: rgb(65, 65, 69)"></i>
-            <input
-              type="email"
-              id="lg-email"
-              placeholder="Your Email"
-              required
-            />
-          </div>
-          <div class="lg-input-group">
-            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
-            <input
-              type="password"
-              id="lg-password"
-              placeholder="Password"
-              required
-            />
-          </div>
-          <div class="lg-input-group" id="lg-confirm-password-field">
-            <i class="fas fa-lock" style="color: rgb(65, 65, 69)"></i>
-            <input
-              type="password"
-              id="lg-confirm-password"
-              placeholder="Repeat your password"
-              required
-            />
-          </div>
-          <div class="lg-checkbox-group" id="lg-terms-field">
-            <input type="checkbox" id="lg-terms" required />
-            <label for="lg-terms"
-              >I agree all statements in <a href="#">Terms of service</a></label
-            >
-          </div>
-          <a href="form.html"   class="lg-button"> </i> Register </a>
-          
-        </form>
-        <br />
-        <p><a href="#" id="lg-already-member-link">I am already a member</a></p>
-      </div>
+        <div class="lg-image-container">
+            <img src="images/ak2.png" alt="Desk Image" />
+        </div>
+
+        <div class="lg-form-container">
+            <h1 id="lg-form-heading">Log in</h1>
+            <form id="lg-form">
+                <div class="lg-input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="lg-email" placeholder="Your Email" required />
+                </div>
+                <div class="lg-input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="lg-password" placeholder="Password" required />
+                </div>
+
+                <!-- Forgot Password Option -->
+
+
+                <a type="submit" class="lg-button"  href="form.html">Log in</a>
+            </form>
+
+            <p><a href="#" id="lg-already-member-link">Create new account</a></p>
+            <p><a href="OTP.html" id="lg-already-member-link2">Forgot password</a></p>
+        </div>
     </div>
+
     <script>
-      document
-        .getElementById("lg-already-member-link")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
+        document.getElementById("lg-already-member-link").addEventListener("click", function (e) {
+            e.preventDefault();
 
-          const container = document.querySelector(".lg-container");
-          const formHeading = document.getElementById("lg-form-heading");
-          const nameField = document.getElementById("lg-name-field");
-          const confirmPasswordField = document.getElementById(
-            "lg-confirm-password-field"
-          );
-          const divert = document.getElementById("lg-already-member-link");
-          const termsField = document.getElementById("lg-terms-field");
-          const registerButton = document.querySelector(".lg-button");
+            const formHeading = document.getElementById("lg-form-heading");
+            const form = document.getElementById("lg-form");
+            const alreadyMemberLink = document.getElementById("lg-already-member-link");
+            const forgotPassword = document.getElementById("lg-already-member-link2");
 
-          container.classList.toggle("shifted");
-
-          if (container.classList.contains("shifted")) {
-            formHeading.textContent = "Log in";
-            nameField.style.display = "none";
-            confirmPasswordField.style.display = "none";
-            termsField.style.display = "none";
-            registerButton.textContent = "Log in";
-            divert.textContent = "Create new account";
-          } else {
-            formHeading.textContent = "Sign up";
-            nameField.style.display = "block";
-            confirmPasswordField.style.display = "block";
-            termsField.style.display = "flex";
-            registerButton.textContent = "Register";
-          }
+            if (formHeading.textContent === "Log in") {
+                formHeading.textContent = "Sign up";
+                form.innerHTML = `
+                    <div class="lg-input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="lg-name" placeholder="Your Name" required />
+                    </div>
+                    <div class="lg-input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="lg-email" placeholder="Your Email" required />
+                    </div>
+                    <div class="lg-input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="lg-password" placeholder="Password" required />
+                    </div>
+                    <div class="lg-input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="lg-confirm-password" placeholder="Repeat your password" required />
+                    </div>
+                    <a type="submit" class="lg-button" href="form.html">Register</button>
+                `;
+                alreadyMemberLink.textContent = "I am already a member";
+                forgotPassword.textContent ="";
+            } else {
+                formHeading.textContent = "Log in";
+                form.innerHTML = `
+                    <div class="lg-input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="lg-email" placeholder="Your Email" required />
+                    </div>
+                    <div class="lg-input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="lg-password" placeholder="Password" required />
+                    </div>
+                  
+                    <a type="submit" class="lg-button" href="form.html">Log in</a>
+                      <p id="lg-already-member-link2"><a href="#">Forgot Password?</a></p>
+                `;
+                alreadyMemberLink.textContent = "Create new account";
+            }
         });
     </script>
-  </body>
+</body>
 </html>

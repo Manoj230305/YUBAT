@@ -3329,3 +3329,57 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
   transition: 0.375s ease;
   text-align: center;
 }
+
+
+.gradient-btn {
+  background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out, width 0.3s ease-in-out;
+  text-decoration: none;
+  width: 100%;
+  max-width: 350px; /* Max size */
+  height: 50px;
+  display: block;
+  margin: 0 auto; /* Center the button */
+  text-align: center;
+}
+
+/* Hover effect */
+.gradient-btn:hover {
+  background: linear-gradient(0.25turn, #13b5ff, #d19bc7, #ec478d);
+  color: white;
+}
+
+/* Make the button smaller on smaller screens */
+@media (max-width: 768px) {
+  .gradient-btn {
+    max-width: 200px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradient-btn {
+    max-width: 200px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+#gradbut{
+  background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
+  color: white; 
+  border: none;
+}
+
+#gradbut:hover{
+  background: linear-gradient(0.25turn, #13b5ff, #d19bc7, #ec478d);
+  color: white;
+}
