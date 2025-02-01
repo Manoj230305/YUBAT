@@ -50,6 +50,7 @@
 
             <p class="d-flex mb-0">
               <i class="bi-envelope me-2"></i>
+
               <a href="mailto:info@company.com"> info@yubat.com </a>
             </p>
           </div>
@@ -81,7 +82,7 @@
       </div>
     </header>
 
-    <!-- <header id="header" class="header d-flex align-items-center sticky-top">
+    <header id="header" class="header d-flex align-items-center sticky-top">
       <div
         class="container-fluid container-xl position-relative d-flex align-items-center"
       >
@@ -89,7 +90,7 @@
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </div>
-    </header> -->
+    </header>
 
     <nav class="navbar navbar-expand-lg bg-light shadow-lg">
       <div class="container">
@@ -117,11 +118,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link click-scroll" href="index.html">Home</a>
+              <a class="nav-link click-scroll" href="index.htmlgit">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+              <a class="nav-link click-scroll" href="#section_2">About</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -164,17 +165,17 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link click-scroll" href="index.html#section_6">Contact Us</a>
+              <a class="nav-link click-scroll" href="#section_6">Contact Us</a>
             </li>
 
             <li class="nav-item ms-3">
-              <a
-                class="nav-link custom-btn custom-border-btn btn"
-                href="doctorlist.html"
-                id="gradbut"
-              
-                >Book a couch</a
+              <button
+                class="gradient-btn"
+                onclick="saveOptions()"
+                onclick="window.location.href='doctorlist.html'"
               >
+                Join Our Team
+              </button>
             </li>
 
             <li class="nav-item ms-3">
@@ -230,7 +231,7 @@
             </div>
 
             <!-- Right Section: Search Box -->
-            <div class="col-lg-4 col-12 filter-search-wrapper">
+            <div class="col-lg-4 col-12">
               <form
                 class="custom-form search-form"
                 action="#"
@@ -243,24 +244,14 @@
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button type="submit" class="form-control search-btn">
+                <button type="submit" class="form-control">
                   <i class="bi-search"></i>
                 </button>
               </form>
-              <button
-                class="btn btn-filter"
-                id="filter-button"
-                style="padding: 8px 18px; float: right; margin-top: 10px;"
-              >
-                <i class="bi-filter"></i>
-                Filter
-              </button>
-
             </div>
-            
 
             <!-- Tags Block -->
-            <div class="row align-items-center mt-10">
+            <div class="row align-items-center mt-4">
               <!-- Tags Block -->
               <!-- <div class="col-lg-10 col-12">
                 <div class="tags-block d-flex flex-wrap">
@@ -281,13 +272,13 @@
                   </a>
                 </div>
               </div> -->
-              <div class="col-lg-10 col-12 mt-10">
+              <div class="col-lg-10 col-12">
                 <div class="tags-block d-flex flex-wrap" id="tags-container">
                   <!-- Dynamic content will be added here -->
                 </div>
               </div>
               <!-- Filter Option -->
-              <!-- <div class="col-lg-2 col-12">
+              <div class="col-lg-2 col-12">
                 <button
                   class="btn btn-filter w-100 d-flex align-items-center justify-content-center"
                   id="filter-button"
@@ -295,7 +286,7 @@
                   <i class="bi-filter me-2"></i>
                   Filter
                 </button>
-              </div> -->
+              </div>
 
               <!-- Modal for Filter -->
               <div
@@ -340,7 +331,7 @@
 
                       <!-- Right side content -->
                       <div id="filterContent">
-                        <!-- <h5>For You</h5>
+                        <h5>For You</h5>
                         <ul>
                           <li>
                             <input type="radio" name="therapy" value="you" />
@@ -362,7 +353,7 @@
                             <input type="radio" name="therapy" value="family" />
                             For You & Your Family
                           </li>
-                        </ul> -->
+                        </ul>
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -389,7 +380,63 @@
         </div>
       </section>
 
-      
+      <script>
+        const dateContainer = document.getElementById("date-container");
+        const prevDateBtn = document.getElementById("prev-date-btn");
+        const nextDateBtn = document.getElementById("next-date-btn");
+        let currentDate = new Date();
+
+        function generateDates(startDate) {
+          dateContainer.innerHTML = "";
+          for (let i = -2; i <= 2; i++) {
+            const date = new Date(startDate);
+            date.setDate(startDate.getDate() + i);
+
+            const day = date.toLocaleString("en-US", { weekday: "short" });
+            const dayNum = date.getDate();
+            const month = date.toLocaleString("en-US", { month: "short" });
+
+            const dateItem = document.createElement("div");
+            dateItem.classList.add("date-item", "text-center");
+            if (i === 0) dateItem.classList.add("selected");
+
+            dateItem.innerHTML = `
+                    <div class="day fw-bold">${day}</div>
+                    <div class="date fs-4 fw-bold">${dayNum}</div>
+                    <div class="month">${month}</div>
+                  `;
+
+            dateItem.addEventListener("click", () => {
+              document.querySelectorAll(".date-item").forEach((item) => {
+                item.classList.remove("selected");
+              });
+              dateItem.classList.add("selected");
+            });
+
+            dateContainer.appendChild(dateItem);
+          }
+        }
+
+        // Update dates when navigation buttons are clicked
+        prevDateBtn.addEventListener("click", () => {
+          currentDate.setDate(currentDate.getDate() - 1);
+          generateDates(currentDate);
+        });
+
+        nextDateBtn.addEventListener("click", () => {
+          currentDate.setDate(currentDate.getDate() + 1);
+          generateDates(currentDate);
+        });
+
+        // Initialize the timeline with the current date
+        generateDates(currentDate);
+      </script>
+
+      <script>
+        function removeTag(tag) {
+          tag.remove(); // Removes the tag element
+        }
+      </script>
     </main>
     <main class="main">
       <!-- Team Section -->
@@ -402,19 +449,18 @@
                   <img src="images/aashi.jpeg" class="img-fluid" alt="" />
                 </div>
                 <div class="member-info">
-                  <h4 style="font-size:x-large; font-family:Arial, Helvetica, sans-serif; font-weight: bold; color: #2c3e50">Dr. Aashifa</h4>
+                  <h4 style="font-weight: bold; color: #2c3e50">Dr. Aashifa</h4>
                   <span style="font-size: 0.9rem; color: #525455"
                     >Psychiatrist</span
                   >
-                  <p style="margin-top: 0; font-size: 0.9rem;"><strong>Speaks:</strong> Tamil, English, Hindi</p>
+                  <p><strong>Speaks:</strong> Tamil, English, Hindi</p>
                   <p>
                     <strong>Expertise:</strong> Anxiety, Relationship issues,
                     Self esteem
                   </p>
                   <p><strong>Price:</strong> ₹800 / 60 min session</p>
                   <p><br /></p>
-                  <a href="aboutdoc.html" class="btn-grad">Book Now</a>
-                  
+                  <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
                 </div>
               </div>
             </div>
@@ -426,20 +472,20 @@
                   <img src="images/jemi.jpg" class="img-fluid" alt="" />
                 </div>
                 <div class="member-info">
-                  <h4 style="font-size:x-large; font-family:Arial, Helvetica, sans-serif; font-weight: bold; color: #2c3e50">
+                  <h4 style="font-weight: bold; color: #2c3e50">
                     Dr. Jeyanthi
                   </h4>
                   <span style="font-size: 0.9rem; color: #525455"
                     >Psychiatrist</span
                   >
-                  <p style="margin-top: 0; font-size: 0.9rem;"><strong>Speaks:</strong> Tamil, English, Hindi</p>
+                  <p><strong>Speaks:</strong> Tamil, English, Hindi</p>
                   <p>
                     <strong>Expertise:</strong> Anxiety, Relationship issues,
                     Self esteem
                   </p>
                   <p><strong>Price:</strong> ₹800 / 60 min session</p>
                   <p><br /></p>
-                  <a href="aboutdoc.html" class="btn-grad">Book Now</a>
+                  <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
                 </div>
               </div>
             </div>
@@ -451,18 +497,18 @@
                   <img src="images/divi.jpg" class="img-fluid" alt="" />
                 </div>
                 <div class="member-info">
-                  <h4 style="font-size:x-large; font-family:Arial, Helvetica, sans-serif; font-weight: bold; color: #2c3e50">Dr. Dhivya</h4>
+                  <h4 style="font-weight: bold; color: #2c3e50">Dr. Dhivya</h4>
                   <span style="font-size: 0.9rem; color: #525455"
                     >Psychiatrist</span
                   >
-                  <p style="margin-top: 0; font-size: 0.9rem;"><strong>Speaks:</strong> Tamil, English, Hindi</p>
+                  <p><strong>Speaks:</strong> Tamil, English, Hindi</p>
                   <p>
                     <strong>Expertise:</strong> Anxiety, Relationship issues,
                     Self esteem
                   </p>
                   <p><strong>Price:</strong> ₹800 / 60 min session</p>
                   <p><br /></p>
-                  <a href="aboutdoc.html" class="btn-grad">Book Now</a>
+                  <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
                 </div>
               </div>
             </div>
@@ -474,18 +520,18 @@
                   <img src="images/vj1.jpg" class="img-fluid" alt="" />
                 </div>
                 <div class="member-info">
-                  <h4 style="font-size:x-large; font-family:Arial, Helvetica, sans-serif; font-weight: bold; color: #2c3e50">Dr. Vijay</h4>
+                  <h4 style="font-weight: bold; color: #2c3e50">Dr. Vijay</h4>
                   <span style="font-size: 0.9rem; color: #525455"
                     >Psychiatrist</span
                   >
-                  <p style="margin-top: 0; font-size: 0.9rem;"><strong>Speaks:</strong> Tamil, English, Hindi</p>
+                  <p><strong>Speaks:</strong> Tamil, English, Hindi</p>
                   <p>
                     <strong>Expertise:</strong> Anxiety, Relationship issues,
                     Self esteem
                   </p>
                   <p><strong>Price:</strong> ₹800 / 60 min session</p>
                   <p><br /></p>
-                  <a href="aboutdoc.html" class="btn-grad">Book Now</a>
+                  <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
                 </div>
               </div>
             </div>
@@ -497,18 +543,18 @@
                   <img src="images/mep.jpg" class="img-fluid" alt="" />
                 </div>
                 <div class="member-info">
-                  <h4 style="font-size:x-large; font-family:Arial, Helvetica, sans-serif; font-weight: bold; color: #2c3e50">Dr. MEP</h4>
+                  <h4 style="font-weight: bold; color: #2c3e50">Dr. MEP</h4>
                   <span style="font-size: 0.9rem; color: #525455"
                     >Psychologist</span
                   >
-                  <p style="margin-top: 0; font-size: 0.9rem;"><strong>Speaks:</strong> Tamil, English, Hindi</p>
+                  <p><strong>Speaks:</strong> Tamil, English, Hindi</p>
                   <p>
                     <strong>Expertise:</strong> Anxiety, Relationship issues,
                     Self esteem
                   </p>
                   <p><strong>Price:</strong> ₹800 / 60 min session</p>
                   <p><br /></p>
-                  <a href="aboutdoc.html" class="btn-grad">Book Now</a>
+                  <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
                 </div>
               </div>
             </div>
@@ -525,18 +571,18 @@
                   />
                 </div>
                 <div class="member-info">
-                  <h4 style="font-size:x-large; font-family:Arial, Helvetica, sans-serif; font-weight: bold; color: #2c3e50">Dr. Sanjay</h4>
+                  <h4 style="font-weight: bold; color: #2c3e50">Dr. Sanjay</h4>
                   <span style="font-size: 0.9rem; color: #525455"
                     >Pediatrition</span
                   >
-                  <p style="margin-top: 0; font-size: 0.9rem;"><strong>Speaks:</strong> Tamil, English, Hindi</p>
+                  <p><strong>Speaks:</strong> Tamil, English, Hindi</p>
                   <p>
                     <strong>Expertise:</strong> Anxiety, Relationship issues,
                     Self esteem
                   </p>
                   <p><strong>Price:</strong> ₹800 / 60 min session</p>
                   <p><br /></p>
-                  <a href="aboutdoc.html" class="btn-grad">Book Now</a>
+                  <a href="aboutdoc.html" class="book-now-btn">Book Now</a>
                 </div>
               </div>
             </div>
@@ -781,29 +827,17 @@
           );
           myModal.show();
         });
-      // Set default therapy content on page load
-      document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("filterContent").innerHTML = `
-          <h5>Therapy Options</h5>
-          <ul>
-            <li><input type="radio" name="therapy" /> For You</li>
-            <li><input type="radio" name="therapy" /> For You & Your Partner</li>
-            <li><input type="radio" name="therapy" /> For You & Your Children</li>
-            <li><input type="radio" name="therapy" /> For You & Your Family</li>
-          </ul>
-        `;
-      });
+
       // Handle category button clicks
       document
         .getElementById("therapyBtn")
         .addEventListener("click", function () {
-          document.getElementById("filterContent").innerHTML = `
+          document.getElementById("filterCoFntent").innerHTML = `
               <h5>Therapy Options</h5>
               <ul>
-                <li><input type="radio" /> For You</li>
-                <li><input type="radio" /> For You & your partner</li>
-                <li><input type="radio" /> For You & Your Children</li>
-                <li><input type="radio" /> For You & Your Family</li>
+                <li><input type="checkbox" /> Therapy 1</li>
+                <li><input type="checkbox" /> Therapy 2</li>
+                <li><input type="checkbox" /> Therapy 3</li>
               </ul>
             `;
         });
@@ -912,64 +946,6 @@
       // Function to remove tag
       function removeTag(tagElement) {
         tagsContainer.removeChild(tagElement);
-      }
-    </script>
-
-    <script>
-      const dateContainer = document.getElementById("date-container");
-      const prevDateBtn = document.getElementById("prev-date-btn");
-      const nextDateBtn = document.getElementById("next-date-btn");
-      let currentDate = new Date();
-
-      function generateDates(startDate) {
-        dateContainer.innerHTML = "";
-        for (let i = 0; i <= 4; i++) {
-          const date = new Date(startDate);
-          date.setDate(startDate.getDate() + i);
-
-          const day = date.toLocaleString("en-US", { weekday: "short" });
-          const dayNum = date.getDate();
-          const month = date.toLocaleString("en-US", { month: "short" });
-
-          const dateItem = document.createElement("div");
-          dateItem.classList.add("date-item", "text-center");
-          if (i === 0) dateItem.classList.add("selected");
-
-          dateItem.innerHTML = `
-                  <div class="day fw-bold">${day}</div>
-                  <div class="date fs-4 fw-bold">${dayNum}</div>
-                  <div class="month">${month}</div>
-                `;
-
-          dateItem.addEventListener("click", () => {
-            document.querySelectorAll(".date-item").forEach((item) => {
-              item.classList.remove("selected");
-            });
-            dateItem.classList.add("selected");
-          });
-
-          dateContainer.appendChild(dateItem);
-        }
-      }
-
-      // Update dates when navigation buttons are clicked
-      prevDateBtn.addEventListener("click", () => {
-        currentDate.setDate(currentDate.getDate() - 1);
-        generateDates(currentDate);
-      });
-
-      nextDateBtn.addEventListener("click", () => {
-        currentDate.setDate(currentDate.getDate() + 1);
-        generateDates(currentDate);
-      });
-
-      // Initialize the timeline with the current date
-      generateDates(currentDate);
-    </script>
-
-    <script>
-      function removeTag(tag) {
-        tag.remove(); // Removes the tag element
       }
     </script>
     <a

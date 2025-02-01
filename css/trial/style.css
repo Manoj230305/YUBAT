@@ -657,10 +657,10 @@ strong {
   transition: all 0.5s;
 }
 
-/* .carousel-control-next-icon:hover,
+.carousel-control-next-icon:hover,
 .carousel-control-prev-icon:hover {
   background-color: var(--primary-color);
-} */
+}
 
 /*---------------------------------------
   FEATURE BLOCK              
@@ -2008,6 +2008,7 @@ button:hover {
 .book-now-btn:hover {
   transform: translateY(-5px);
   background-color: #333;
+  color: white;
 }
 
 @keyframes fadeInUp {
@@ -2479,10 +2480,10 @@ NEW CARD
   transition: all 0.5s;
 }
 
-/* .carousel-control-next-icon:hover,
+.carousel-control-next-icon:hover,
 .carousel-control-prev-icon:hover {
   background-color: var(--primary-color);
-} */
+}
 
 .hero .icon-box {
   padding: 30px 20px;
@@ -3330,7 +3331,6 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
   text-align: center;
 }
 
-
 .gradient-btn {
   background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
   border: none;
@@ -3372,34 +3372,3 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
     font-size: 12px;
   }
 }
-
-#gradbut{
-  background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
-  
-  color: white; 
-  border: none;
-}
-
-#gradbut:hover{
-  background: linear-gradient(0.25turn, #13b5ff, #d19bc7, #ec478d);
-  color: white;
-}
-
-
-/* #btn-grad {background-image: linear-gradient(to right, #3494E6 0%, #EC6EAD  51%, #3494E6  100%)}
-#btn-grad {
-  margin: 10px;
-  text-align: center;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border: none;            
-  border-radius: 12px;
-  display: block;
-}
-
-#btn-grad:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
-} */

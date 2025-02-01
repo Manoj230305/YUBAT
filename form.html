@@ -381,11 +381,20 @@
                           id="terms"
                           required
                         />
+                        
                         <label for="terms" class="form-check-label">
                           &nbsp;I have read and agreed to the
                           <a href="#">terms and conditions</a> and
                           <a href="#">privacy policy</a>.
                         </label>
+                        <button
+                          id="saveproceed"
+                          class="btn btn-dark w-100 mt-4 py-3 shadow-sm"
+                          type="button"
+                          disabled
+                        >
+                          Save & Proceed
+                        </button>
                       </div>
                     </div>
 
@@ -439,6 +448,7 @@
                   id="payNowButton"
                   class="btn btn-dark w-100 mt-4 py-3 shadow-sm"
                   type="button"
+                  disabled
                 >
                   Pay Now
                 </button>
@@ -974,39 +984,58 @@
           document
             .getElementById("familyMembers")
             .insertAdjacentHTML("beforeend", newMember);
-        });
-      document.getElementById("payNowButton").onclick = function (e) {
-        var options = {
-          key: "rzp_test_3ksgbFSQXnHabf", // Replace with your Razorpay Key
-          "Key Secret": "9JyIY2qdpVjKYT9jS3eGRyQk",
-          amount: 80000,
-          currency: "INR",
-          name: "YUBAT International",
-          description: "Payment for Session",
-          // "image": "your_logo_url_here", // Optional: Add your logo
-          handler: function (response) {
-            alert(
-              "Payment successful! Payment ID: " + response.razorpay_payment_id
-            );
-            // You can make an AJAX call here to verify payment with your server
-          },
-          prefill: {
-            name: "John Doe",
-            email: "john.doe@example.com",
-            contact: "9123456789",
-          },
-          notes: {
-            address: "Razorpay Test Address",
-          },
-          theme: {
-            color: "#F37254",
-          },
-        };
+          });
+          const termsCheckbox = document.getElementById("terms");
+          const saveProceedButton = document.getElementById("saveproceed");
+          const payNowButton = document.getElementById("payNowButton");
 
-        var rzp1 = new Razorpay(options);
-        rzp1.open();
-        e.preventDefault();
-      };
+          // Add an event listener to the checkbox
+          termsCheckbox.addEventListener("change", () => {
+            // Enable or disable the "Save & Proceed" button based on the checkbox state
+            if (termsCheckbox.checked) {
+              saveProceedButton.disabled = false;
+            } else {
+              saveProceedButton.disabled = true;
+            }
+          });
+
+          // Add an event listener to the "Save & Proceed" button
+          saveProceedButton.addEventListener("click", () => {
+            // Enable the "Pay Now" button when "Save & Proceed" is clicked
+            payNowButton.disabled = false;
+          });
+          document.getElementById("payNowButton").onclick = function (e) {
+            var options = {
+              key: "rzp_test_3ksgbFSQXnHabf", // Replace with your Razorpay Key
+              "Key Secret": "9JyIY2qdpVjKYT9jS3eGRyQk",
+              amount: 80000,
+              currency: "INR",
+              name: "YUBAT International",
+              description: "Payment for Session",
+              // "image": "your_logo_url_here", // Optional: Add your logo
+              handler: function (response) {
+                alert(
+                  "Payment successful! Payment ID: " + response.razorpay_payment_id
+                );
+                // You can make an AJAX call here to verify payment with your server
+              },
+              prefill: {
+                name: "John Doe",
+                email: "john.doe@example.com",
+                contact: "9123456789",
+              },
+              notes: {
+                address: "Razorpay Test Address",
+              },
+              theme: {
+                color: "#F37254",
+              },
+            };
+
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+            e.preventDefault();
+          };
     </script>
   </body>
 </html>

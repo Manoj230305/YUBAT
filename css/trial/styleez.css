@@ -50,13 +50,6 @@
   --border-color: #e9eaeb;
   --hover-color: #a8519d;
   --yubut-color: #9dc6d2;
-  --background-color: #ffffff;
-  --default-color: #ffffff;
-  --heading-color: #000000;
-  --accent-color: #ffffff;
-  --surface-color: #ffffff;
-  --contrast-color: #312f2f;
-  --selected-bg: linear-gradient(to right, #add8e6, #ffffff);
   --body-font-family: "Metropolis", sans-serif;
 
   --h1-font-size: 52px;
@@ -657,10 +650,10 @@ strong {
   transition: all 0.5s;
 }
 
-/* .carousel-control-next-icon:hover,
+.carousel-control-next-icon:hover,
 .carousel-control-prev-icon:hover {
   background-color: var(--primary-color);
-} */
+}
 
 /*---------------------------------------
   FEATURE BLOCK              
@@ -972,7 +965,6 @@ blockquote::before {
   color: #333333; /* White text on hover */
   background-color: #c7d7d5; /* Dark background on hover */
 }
-
 .tags-block-link span {
   margin-left: 5px; /* Space between text and the icon */
   font-size: 14px; /* Slightly larger icon */
@@ -2008,6 +2000,7 @@ button:hover {
 .book-now-btn:hover {
   transform: translateY(-5px);
   background-color: #333;
+  color: white;
 }
 
 @keyframes fadeInUp {
@@ -2411,153 +2404,6 @@ NEW CARD
 
 /*NEW CARD END*/
 
-/*---------------------------------------
-  HERO & HERO SLIDE         
------------------------------------------*/
-.hero-section-full-height {
-  height: 680px;
-  min-height: 680px;
-  position: relative;
-}
-
-.carousel:hover .carousel-control-next-icon,
-.carousel:hover .carousel-control-prev-icon {
-  opacity: 1;
-}
-
-#hero-slide .carousel-item {
-  height: 680px;
-  min-height: 680px;
-}
-
-#hero-slide .carousel-caption {
-  background: var(--white-color);
-  clip-path: polygon(100% 100%, 100% 150px, 0 100%);
-  color: var(--secondary-color);
-  top: 1px;
-  bottom: -1px;
-  right: 0;
-  left: auto;
-  text-align: right;
-  min-width: 680px;
-  min-height: 680px;
-  padding: 100px 100px 50px 100px;
-}
-
-.carousel-image {
-  display: block;
-  width: 100%;
-  min-height: 680px;
-}
-
-#hero-slide .carousel-indicators-wrap {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-
-#hero-slide .carousel-indicators {
-  margin-right: 0;
-  margin-left: 22px;
-  justify-content: inherit;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-  opacity: 1;
-}
-
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  background-color: var(--secondary-color);
-  border-radius: var(--border-radius-large);
-  background-size: 60% 60%;
-  width: 80px;
-  height: 80px;
-  opacity: 0;
-  transition: all 0.5s;
-}
-
-/* .carousel-control-next-icon:hover,
-.carousel-control-prev-icon:hover {
-  background-color: var(--primary-color);
-} */
-
-.hero .icon-box {
-  padding: 30px 20px;
-  border-radius: 25px;
-
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
-    background 0.3s ease-in-out;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  height: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  cursor: pointer;
-  background: var(--background-color);
-}
-
-.hero .icon-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  border-color: var(--accent-color);
-}
-
-.hero .icon-box.selected {
-  background: var(--selected-bg);
-  transform: translateY(-15px);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero .icon-box i {
-  font-size: 32px;
-  line-height: 1;
-  color: var(--accent-color);
-}
-
-.hero .icon-box h3 {
-  font-weight: 700;
-  margin: 10px 0 0 0;
-  padding: 0;
-  line-height: 1;
-  font-size: 20px;
-  line-height: 26px;
-}
-
-.hero .icon-box h3 a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  transition: ease-in-out 0.3s;
-}
-
-.hero .icon-box:hover h3 a {
-  color: var(--accent-color);
-}
-
-.pink-icon {
-  color: pink; /* Solid pink color */
-  font-size: 32px; /* Adjust size */
-}
-
-.hero .icon-box i {
-  color: #da548c;
-  font-size: 32px;
-}
-
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-}
-
 /* Profile page */
 section.explore-section {
   /* background-color: #f9f9f9; */
@@ -2782,11 +2628,6 @@ button:focus {
 }
 
 /*Form Start*/
-
-.custom-shadow {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow */
-  background-color: #deeaf3;
-}
 
 .session-form {
   background-color: hsl(0, 0%, 100%);
@@ -3183,223 +3024,148 @@ h6 {
   background-color: #2e7d32;
 }
 
-.checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-  user-select: none;
-  gap: 0.5rem; /* Simplified margin for better spacing */
+/*--------------------------------------------------------------
+# Team of doctors
+--------------------------------------------------------------*/
+#teamcard {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  font-family: var(--default-font);
 }
 
-.checkbox-group-legend {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #9c9c9c;
-  text-align: center;
-  line-height: 1.125;
-  margin-bottom: 1.25rem;
+#ta {
+  color: red;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.checkbox-input {
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-  height: 1px;
+#ta:hover {
+  color: color-mix(in srgb, red, transparent 25%);
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team .team-member {
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  border-radius: 5px;
+  transition: 0.5s;
+  padding: 30px;
+  height: 100%;
+}
+
+@media (max-width: 468px) {
+  .team .team-member {
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+.team .team-member .pic {
   overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+  width: 150px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
 
-  &:checked + .checkbox-tile {
-    border-color: #d2528b;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    color: #d2528b;
-    &:before {
-      transform: scale(1);
-      opacity: 1;
-      background-color: #d2528b;
-      border-color: #d2528b;
-    }
+.team .team-member .pic img {
+  transition: ease-in-out 0.3s;
+}
 
-    .checkbox-icon,
-    .checkbox-label {
-      color: #d2528b;
-    }
-  }
+.team .team-member:hover {
+  transform: translateY(-10px);
+}
 
-  &:focus + .checkbox-tile {
-    border-color: #bb4688;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
-    &:before {
-      transform: scale(1);
-      opacity: 1;
-    }
+.team .team-member .member-info {
+  padding-left: 30px;
+}
+
+@media (max-width: 468px) {
+  .team .team-member .member-info {
+    padding: 30px 0 0 0;
+    text-align: center;
   }
 }
 
-.checkbox-tile-wrapper {
-  display: inline-block;
+.team .team-member h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.team .team-member span {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
   position: relative;
+  font-weight: 500;
 }
 
-/* input[type="checkbox"] {
-  display: none;
-} */
-
-input[type="checkbox"] {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.checkbox-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 8.5rem;
-  min-height: 8.5rem;
-  border-radius: 0.5rem;
-  border: 2px solid #b5bfd9;
-  background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.25s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-/* Visible empty circle initially */
-.checkbox-tile:before {
+.team .team-member span::after {
   content: "";
   position: absolute;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: #fff; /* Empty background */
-  border: 2px solid #b5bfd9; /* Circle border */
-  border-radius: 50%;
-  top: 0.25rem;
-  left: 0.25rem;
-  opacity: 1; /* Always visible */
-  transform: scale(1); /* Fully visible */
-  transition: 0.25s ease;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
+  bottom: 0;
+  left: 0;
 }
 
-.checkbox-tile:hover {
-  border-color: #6578bb;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+@media (max-width: 468px) {
+  .team .team-member span::after {
+    left: calc(50% - 25px);
+  }
 }
 
-/* When the checkbox is checked */
-input[type="checkbox"]:checked + .checkbox-tile {
-  border-color: #d2528b;
-  background-color: #fff;
-  box-shadow: 0 8px 16px rgba(10, 10, 10, 0.4);
+.team .team-member p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
 }
 
-input[type="checkbox"]:checked + .checkbox-tile:before {
-  content: "✓"; /* Display the tick */
-  font-size: 1rem; /* Adjust tick size */
-  color: #fff; /* Tick color */
-  position: absolute;
-  top: 0.25rem;
-  left: 0.25rem;
-  background-color: #d2528b; /* Background for the tick */
-  border: 2px solid #d2528b; /* Match background color */
+.team .team-member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+@media (max-width: 468px) {
+  .team .team-member .social {
+    justify-content: center;
+  }
+}
+
+.team .team-member .social a {
+  background: color-mix(in srgb, #444444, transparent 94%);
+  transition: ease-in-out 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%; /* Circle shape */
-  transform: scale(1); /* Maintain visibility */
+  border-radius: 5px;
+  width: 36px;
+  height: 36px;
 }
 
-.checkbox-icon {
-  transition: 0.375s ease;
-  color: #494949;
-  svg {
-    width: 3rem;
-    height: 3rem;
-  }
-}
-
-.checkbox-label {
-  color: #707070;
-  transition: 0.375s ease;
-  text-align: center;
-}
-
-
-.gradient-btn {
-  background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
-  border: none;
-  padding: 12px 24px;
+.team .team-member .social a i {
+  color: color-mix(in srgb, #444444, transparent 20%);
   font-size: 16px;
-  color: white;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.5s ease-in-out, width 0.3s ease-in-out;
-  text-decoration: none;
-  width: 100%;
-  max-width: 350px; /* Max size */
-  height: 50px;
-  display: block;
-  margin: 0 auto; /* Center the button */
-  text-align: center;
+  margin: 0 2px;
 }
 
-/* Hover effect */
-.gradient-btn:hover {
-  background: linear-gradient(0.25turn, #13b5ff, #d19bc7, #ec478d);
-  color: white;
+.team .team-member .social a:hover {
+  background: red;
 }
 
-/* Make the button smaller on smaller screens */
-@media (max-width: 768px) {
-  .gradient-btn {
-    max-width: 200px;
-    height: 40px;
-    font-size: 14px;
-  }
+.team .team-member .social a:hover i {
+  color: #ffff;
 }
 
-@media (max-width: 480px) {
-  .gradient-btn {
-    max-width: 200px;
-    height: 40px;
-    font-size: 12px;
-  }
+.team .team-member .social a + a {
+  margin-left: 8px;
 }
-
-#gradbut{
-  background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
-  
-  color: white; 
-  border: none;
-}
-
-#gradbut:hover{
-  background: linear-gradient(0.25turn, #13b5ff, #d19bc7, #ec478d);
-  color: white;
-}
-
-
-/* #btn-grad {background-image: linear-gradient(to right, #3494E6 0%, #EC6EAD  51%, #3494E6  100%)}
-#btn-grad {
-  margin: 10px;
-  text-align: center;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border: none;            
-  border-radius: 12px;
-  display: block;
-}
-
-#btn-grad:hover {
-  background-position: right center;
-  color: #fff;
-  text-decoration: none;
-} */
