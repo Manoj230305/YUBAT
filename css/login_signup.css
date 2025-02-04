@@ -1,5 +1,6 @@
 #logbody {
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-image: url('images/bglogin.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,19 +8,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  position: relative;
 }
 
 /* Container */
 .lg-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 850px;
-  width: 90%;
   background: white;
+  max-width: 900px;
+  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  justify-content: center;
+  transition: transform 0.5s ease-in-out;
 }
 
 /* Image Container */
@@ -29,14 +32,14 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  min-width: 280px;
+  min-width: 300px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .lg-image-container img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
 }
 
 .lg-image-container img:hover {
@@ -69,44 +72,64 @@
   text-align: center;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
   .lg-container {
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
   }
 
   .lg-image-container {
-    order: 1;
     width: 100%;
     padding: 10px;
   }
 
+  .lg-image-container img {
+    max-width: 75%;
+  }
+
   .lg-form-container {
-    order: 2;
     width: 100%;
+    padding: 20px;
+  }
+
+  .tiny-back {
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* Adjust input fields for smaller screens */
+  .lg-input-group {
+    width: 80%;
+  }
+
+  .lg-input-group input {
+    padding: 10px 10px 10px 35px;
   }
 }
-
 /* Input Fields */
 .lg-input-group {
   display: flex;
   align-items: center;
-  padding: 10px;
+  position: relative;
   margin-bottom: 15px;
 }
 
 .lg-input-group input {
   width: 100%;
-  padding: 10px;
+  padding: 10px 10px 10px 35px;
+  font-size: 14px;
   border: none;
   border-bottom: 2px solid #ccc;
   outline: none;
-  font-size: 14px;
+  transition: all 0.3s ease;
 }
 
 .lg-input-group input:focus {
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid #007BFF;
+  box-shadow: 0 4px 4px rgba(0, 123, 255, 0.2);
 }
 
 
@@ -194,16 +217,16 @@
 
 
 .lg-button {
-  display: block;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
   background-color: #e7367a;
-  color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
-  text-align: center;
+  transition: all 0.3s ease;
+
 }
 .lg-button:hover,
 .lg-button:focus {
@@ -212,7 +235,7 @@
 
 .lg-form-container .lg-button {
   margin: 10px auto;
-  display: block;
+  
 }
 
 .lg-input-group {
@@ -222,7 +245,10 @@
 }
 
 .lg-input-group i {
-  margin-right: 10px;
+  position: absolute;
+  left: 10px;
+  font-size: 16px;
+  color: #888;
 }
 
 .back-button {
