@@ -16,24 +16,15 @@
   </head>
 
   <body id="logbody" style="background-image: url(images/bglogin.png)">
-    <a href="doctorlist (1).html" class="back-button"> <i class="fas fa-arrow-left"></i> Back </a>
+    <a href="doctorlist.html" class="back-button"> <i class="fas fa-arrow-left"></i> Back </a>
     <div class="lg-container">
       <div class="lg-image-container">
-        <img src="images/ak2.png" alt="Desk Image" />
+        <img src="images/avatar/doctor.jpg" alt="Desk Image" />
       </div>
       <div class="lg-form-container">
         <h1 id="lg-form-heading">OTP Verification</h1>
         <form id="lg-form">
-          <div class="lg-input-group">
-            <i class="fas fa-envelope" style="color: rgb(65, 65, 69);"></i>
-            <input
-              type="email"
-              id="lg-email"
-              class="lg-email-input"
-              placeholder="Enter Your Email"
-              required
-            />
-          </div>
+          
           <div class="lg-input-group">
             <button type="button" id="send-otp-button" class="lg-button">
               Send OTP
@@ -146,11 +137,7 @@
         const otpContainer = document.getElementById("otp-container");
         const otpInputs = document.querySelectorAll(".otp-box");
 
-        sendOtpButton.addEventListener("click", function () {
-          alert("OTP sent to your email!");
-          otpContainer.style.display = "block";
-          otpInputs[0].focus();
-        });
+        
 
         // Automatically move to the next input box
         otpInputs.forEach((input, index) => {
@@ -167,14 +154,47 @@
           });
         });
 
-        document.getElementById("verify-otp-button").addEventListener("click", function () {
-          const otp = Array.from(otpInputs).map((input) => input.value).join("");
-          if (otp === "1234") {
-            alert("OTP Verified Successfully!");
-          } else {
-            alert("Invalid OTP. Please try again.");
-          }
-        });
+        
+
+        
+
+sendOtpButton.addEventListener("click", function () {
+  alert("OTP sent to your email!");
+
+  // Hide the send OTP button
+  sendOtpButton.style.display = "none";
+
+  // Show the OTP input section
+  otpContainer.style.display = "block";
+
+  // Focus on the first OTP input field
+  otpInputs[0].focus();
+});
+
+// Automatically move to the next input box
+otpInputs.forEach((input, index) => {
+  input.addEventListener("input", function () {
+    if (input.value.length === 1 && index < otpInputs.length - 1) {
+      otpInputs[index + 1].focus();
+    }
+  });
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Backspace" && index > 0 && input.value === "") {
+      otpInputs[index - 1].focus();
+    }
+  });
+});
+
+document.getElementById("verify-otp-button").addEventListener("click", function () {
+  const otp = Array.from(otpInputs).map((input) => input.value).join("");
+  if (otp === "1234") {
+    alert("OTP Verified Successfully!");
+  } else {
+    alert("Invalid OTP. Please try again.");
+  }
+});
+
       </script>
   </body>
 </html>
