@@ -2708,15 +2708,28 @@ h6 {
 
 .rounded-box p {
   color: #555; /* Slightly muted text color */
+}/* Container to wrap carousel and scrollbar */
+.time-slots-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 20px; /* Space for scrollbar */
 }
+
 /* Carousel container */
 .time-slots-carousel {
   display: flex;
-  gap: 10px; /* Space between the slots */
-  overflow-x: auto; /* Horizontal scroll enabled */
+  gap: 10px;
+  overflow-x: auto;
   padding: 10px 0;
-  scroll-behavior: smooth; /* Smooth scrolling */
-  white-space: nowrap; /* Prevents wrapping */
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  scrollbar-width: none; /* Hide default scrollbar */
+}
+
+/* Hide default scrollbar for Webkit browsers */
+.time-slots-carousel::-webkit-scrollbar {
+  display: none;
 }
 
 /* Time slot styling */
@@ -2729,7 +2742,9 @@ h6 {
   transition: background-color 0.3s, color 0.3s;
   font-size: 16px;
   color: #333;
-  display: inline-block; /* Keeps elements inline */
+  display: inline-block;
+  min-width: 80px; /* Ensures slots are large enough */
+  text-align: center;
 }
 
 /* Hover effect */
@@ -2744,10 +2759,35 @@ h6 {
   border-color: #9a7294;
 }
 
-/* Hide scrollbar */
-.time-slots-carousel::-webkit-scrollbar {
-  display: none;
+/* Custom scrollbar container */
+.scrollbar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+
+/* Scrollbar thumb */
+.scrollbar-thumb {
+  height: 100%;
+  width: 20%;
+  background-color: #9a7294;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.scrollbar-thumb:hover {
+  background-color: #d080c5;
+}
+
+
 .checked {
   color: orange;
 }

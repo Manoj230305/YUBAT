@@ -413,7 +413,7 @@
                   </p>
                   <p><strong>Price:</strong> ₹800 / 60 min session</p>
                   <p><br /></p>
-                  <a href="aboutdoc.html" class="btn-grad">Book Now</a>
+                  <a href="aboutdoc.html" class="btn-grad" id="book-now-btn">Book Now</a>
                   
                 </div>
               </div>
@@ -916,55 +916,102 @@
     </script>
 
     <script>
-      const dateContainer = document.getElementById("date-container");
-      const prevDateBtn = document.getElementById("prev-date-btn");
-      const nextDateBtn = document.getElementById("next-date-btn");
-      let currentDate = new Date();
+const dateContainer = document.getElementById("date-container");
+const prevDateBtn = document.getElementById("prev-date-btn");
+const nextDateBtn = document.getElementById("next-date-btn");
 
-      function generateDates(startDate) {
-        dateContainer.innerHTML = "";
-        for (let i = 0; i <= 4; i++) {
-          const date = new Date(startDate);
-          date.setDate(startDate.getDate() + i);
+// Get the current date in IST
+function getIndianTime() {
+  let now = new Date();
+  let istOffset = 5.5 * 60 * 60 * 1000; // IST offset in milliseconds
+  let istTime = new Date(now.getTime() + istOffset);
+  return new Date(istTime.getUTCFullYear(), istTime.getUTCMonth(), istTime.getUTCDate());
+}
 
-          const day = date.toLocaleString("en-US", { weekday: "short" });
-          const dayNum = date.getDate();
-          const month = date.toLocaleString("en-US", { month: "short" });
+let currentDate = getIndianTime();
+let today = getIndianTime();
 
-          const dateItem = document.createElement("div");
-          dateItem.classList.add("date-item", "text-center");
-          if (i === 0) dateItem.classList.add("selected");
+function generateDates(startDate) {
+  dateContainer.innerHTML = "";
 
-          dateItem.innerHTML = `
-                  <div class="day fw-bold">${day}</div>
-                  <div class="date fs-4 fw-bold">${dayNum}</div>
-                  <div class="month">${month}</div>
-                `;
+  for (let i = 0; i <= 4; i++) {
+    const date = new Date(startDate);
+    date.setDate(startDate.getDate() + i);
 
-          dateItem.addEventListener("click", () => {
-            document.querySelectorAll(".date-item").forEach((item) => {
-              item.classList.remove("selected");
-            });
-            dateItem.classList.add("selected");
-          });
+    const day = date.toLocaleString("en-US", { weekday: "short" });
+    const dayNum = date.getDate();
+    const month = date.toLocaleString("en-US", { month: "short" });
 
-          dateContainer.appendChild(dateItem);
-        }
-      }
+    const dateItem = document.createElement("div");
+    dateItem.classList.add("date-item", "text-center");
+    if (i === 0) dateItem.classList.add("selected");
 
-      // Update dates when navigation buttons are clicked
-      prevDateBtn.addEventListener("click", () => {
-        currentDate.setDate(currentDate.getDate() - 1);
-        generateDates(currentDate);
+    dateItem.innerHTML = `
+            <div class="day fw-bold">${day}</div>
+            <div class="date fs-4 fw-bold">${dayNum}</div>
+            <div class="month">${month}</div>
+          `;
+
+    dateItem.addEventListener("click", () => {
+      document.querySelectorAll(".date-item").forEach((item) => {
+        item.classList.remove("selected");
       });
+      dateItem.classList.add("selected");
+    });
 
-      nextDateBtn.addEventListener("click", () => {
-        currentDate.setDate(currentDate.getDate() + 1);
-        generateDates(currentDate);
-      });
+    dateContainer.appendChild(dateItem);
+  }
 
-      // Initialize the timeline with the current date
-      generateDates(currentDate);
+  // Disable "Previous Date" button if currentDate is today or earlier
+  prevDateBtn.disabled = currentDate <= today;
+}
+
+// Update dates when navigation buttons are clicked
+prevDateBtn.addEventListener("click", () => {
+  if (currentDate > today) {
+    currentDate.setDate(currentDate.getDate() - 1);
+    generateDates(currentDate);
+  }
+});
+
+nextDateBtn.addEventListener("click", () => {
+  currentDate.setDate(currentDate.getDate() + 1);
+  generateDates(currentDate);
+});
+
+// Initialize the timeline with the current date
+generateDates(currentDate);
+
+const bookNowBtn = document.getElementById("book-now-btn");
+
+  bookNowBtn.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default navigation
+
+    let selectedDateElement = document.querySelector(".date-item.selected");
+    if (!selectedDateElement) {
+      alert("Please select a date before booking!");
+      return;
+    }
+
+    let selectedDate = selectedDateElement.querySelector(".date").innerText;
+    let selectedMonth = selectedDateElement.querySelector(".month").innerText;
+    let fullYear = new Date().getFullYear(); // Assume current year
+
+    // Convert month name to number
+    let monthMap = {
+      Jan: "01", Feb: "02", Mar: "03", Apr: "04",
+      May: "05", Jun: "06", Jul: "07", Aug: "08",
+      Sep: "09", Oct: "10", Nov: "11", Dec: "12"
+    };
+    let selectedMonthNumber = monthMap[selectedMonth];
+
+    let formattedDate = `${fullYear}-${selectedMonthNumber}-${selectedDate.padStart(2, "0")}`; // Format YYYY-MM-DD
+
+    // Redirect with date as a URL parameter
+    window.location.href = `aboutdoc.html?date=${formattedDate}`;
+  });
+
+
     </script>
 
     <script>

@@ -347,18 +347,27 @@
                 <!-- Time Slots -->
                 <div class="mb-4">
                   <label class="form-label text-uppercase">Time Slots</label>
-                  <div class="time-slots-carousel">
-                    <div class="time-slot" data-value="9am">9 AM</div>
-                    <div class="time-slot" data-value="10am">10 AM</div>
-                    <div class="time-slot" data-value="11am">11 AM</div>
-                    <div class="time-slot" data-value="12pm">12 PM</div>
-                    <div class="time-slot" data-value="1pm">1 PM</div>
-                    <div class="time-slot" data-value="2pm">2 PM</div>
-                    <div class="time-slot" data-value="3pm">3 PM</div>
-                    <div class="time-slot" data-value="4pm">4 PM</div>
-                    <div class="time-slot" data-value="5pm">5 PM</div>
+                  
+                  <div class="time-slots-wrapper">
+                    <div class="time-slots-carousel">
+                      <div class="time-slot" data-value="9am">9 AM</div>
+                      <div class="time-slot" data-value="10am">10 AM</div>
+                      <div class="time-slot" data-value="11am">11 AM</div>
+                      <div class="time-slot" data-value="12pm">12 PM</div>
+                      <div class="time-slot" data-value="1pm">1 PM</div>
+                      <div class="time-slot" data-value="2pm">2 PM</div>
+                      <div class="time-slot" data-value="3pm">3 PM</div>
+                      <div class="time-slot" data-value="4pm">4 PM</div>
+                      <div class="time-slot" data-value="5pm">5 PM</div>
+                    </div>
+                
+                    <!-- Custom scrollbar -->
+                    <div class="scrollbar-container">
+                      <div class="scrollbar-thumb"></div>
+                    </div>
                   </div>
                 </div>
+                
                 
                 <style>
                   
@@ -671,6 +680,73 @@
           this.classList.add("active");
         });
       });
+
     </script>
+    <script>
+  function getQueryParam(param) {
+    let urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  window.onload = function () {
+    let selectedDate = getQueryParam("date");
+    if (selectedDate) {
+      document.getElementById("chin-checkin-date").value = selectedDate;
+    }
+  };
+</script>
+<script>
+const timeSlotsCarousel = document.querySelector(".time-slots-carousel");
+const scrollbarContainer = document.querySelector(".scrollbar-container");
+const scrollbarThumb = document.querySelector(".scrollbar-thumb");
+
+let isDragging = false;
+let startX;
+let scrollLeftStart;
+
+// Function to update scrollbar thumb position
+function updateScrollbar() {
+  const scrollPercentage = timeSlotsCarousel.scrollLeft / (timeSlotsCarousel.scrollWidth - timeSlotsCarousel.clientWidth);
+  const maxThumbPosition = scrollbarContainer.clientWidth - scrollbarThumb.clientWidth;
+  scrollbarThumb.style.transform = `translateX(${scrollPercentage * maxThumbPosition}px)`;
+}
+
+// Function to move the carousel when dragging the scrollbar
+function onThumbDrag(e) {
+  if (!isDragging) return;
+
+  const deltaX = e.clientX - startX;
+  const maxThumbPosition = scrollbarContainer.clientWidth - scrollbarThumb.clientWidth;
+  const scrollPercentage = deltaX / maxThumbPosition;
+
+  timeSlotsCarousel.scrollLeft = scrollLeftStart + scrollPercentage * (timeSlotsCarousel.scrollWidth - timeSlotsCarousel.clientWidth);
+  updateScrollbar();
+}
+
+// Start dragging
+scrollbarThumb.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.clientX;
+  scrollLeftStart = timeSlotsCarousel.scrollLeft;
+  document.body.style.userSelect = "none"; // Prevent text selection
+});
+
+// Stop dragging
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  document.body.style.userSelect = "auto";
+});
+
+// Handle dragging movement
+document.addEventListener("mousemove", onThumbDrag);
+
+// Update scrollbar when carousel scrolls
+timeSlotsCarousel.addEventListener("scroll", updateScrollbar);
+
+// Initialize scrollbar position
+updateScrollbar();
+
+
+</script>
   </body>
 </html>
