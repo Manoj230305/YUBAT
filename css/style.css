@@ -2103,7 +2103,7 @@ button:hover {
 } */
 
 .modal-content {
-  height: 100%; /* Ensures the modal content takes full height */
+   /* Ensures the modal content takes full height */
   overflow-y: auto; /* Adds vertical scrolling for overflow content */
 }
 
@@ -3403,3 +3403,100 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
   color: #fff;
   text-decoration: none;
 } */
+
+
+.password-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin-top: 10px;
+}
+
+/* Smaller buttons */
+#savePassword,
+#cancelPassword {
+  font-size: 14px;
+  padding: 5px 12px;
+  min-width: 80px;
+}
+
+#changePasswordPopup {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 280px; /* Adjust width for a compact popup */
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input fields inside Change Password Popup */
+#changePasswordPopup input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Eye icon inside password fields */
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  width: calc(100% - 30px); /* Reduce width so the eye icon fits */
+  padding-right: 30px; /* Space for the icon */
+}
+
+.password-field i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#passwordField {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  width: 100%;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #888;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  
+  width: 300px;
+  text-align: center;
+}

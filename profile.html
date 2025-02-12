@@ -225,40 +225,69 @@
         
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab">
-              <div class="container mt-4">
-                <div class="row">
-                  <div class="col-md-4 text-center">
-                    <div class="profile-picture-wrapper">
-                        <img src="images/avat.png" class="profile-picture" alt="User Avatar" />
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            <div class="profile-picture-wrapper">
+                                <img src="images/avat.png" class="profile-picture" alt="User Avatar" />
+                            </div>
+                            <h4 id="username">MEP</h4>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Profile Details</h5>
+                            <table class="table">
+                                <tr>
+                                    <th><i class="fas fa-user text-gray"></i>&nbsp; Full Name</th>
+                                    <td><span class="editable" id="fullName">MEPJAHN</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-envelope text-gray"></i>&nbsp; Email</th>
+                                    <td><span class="editable" id="email">mep123@gmail.com</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-phone text-gray"></i>&nbsp; Phone</th>
+                                    <td><span class="editable" id="phone">9190508079</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-map-marker-alt text-gray"></i>&nbsp; Address</th>
+                                    <td><span class="editable" id="address">Dubai Kurukku santhu, DUBAI</span></td>
+                                </tr>
+                                <tr>
+                                    <th><i class="fas fa-lock text-gray"></i>&nbsp; Password</th>
+                                    <td>
+                                        <div class="password-wrapper">
+                                            <input type="password" id="passwordField" class="form-control" value="********" disabled>
+                                            <i class="fas fa-eye" id="togglePassword"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <button class="btn btn-success" id="editButton" onclick="toggleEditMode()">Edit</button>
+                            <button class="btn btn-warning" id="changePasswordButton">Change Password</button>
+                        </div>
                     </div>
-                    <h4 id="username">MEP</h4>
-                  </div>
-                  <div class="col-md-8">
-                    <h5>Profile Details</h5>
-                    <table class="table">
-                        <tr>
-                          <th><i class="fas fa-user text-gray"></i>&nbsp; Full Name</th>
-                            <td><span class="editable" id="fullName">MEPJAHN</span></td>
-                        </tr>
-                        <tr>
-                            <th><i class="fas fa-envelope text-gray"></i>&nbsp; Email</th>
-                            <td><span class="editable" id="email">mep123@gmail.com</span></td>
-                        </tr>
-                        <tr>
-                            <th><i class="fas fa-phone text-gray"></i>&nbsp; Phone</th>
-                            <td><span class="editable" id="phone">9190508079</span></td>
-                        </tr>
-                        <tr>
-                          <th><i class="fas fa-map-marker-alt text-gray"></i>&nbsp; Address</th>
-                            <td><span class="editable" id="address">Dubai Kurukku santhu, DUBAI</span></td>
-                        </tr>
-                    </table>
-                    <button class="btn btn-success" id="editButton" onclick="toggleEditMode()">Edit</button>
-                  </div>
                 </div>
-              </div>
             </div>
-          
+        </div>
+        
+        <!-- Change Password Modal -->
+        <div id="changePasswordModal" class="modal">
+            <div class="modal-content">
+                <h4>Change Password</h4>
+                <label>Current Password:</label>
+                <input type="password" id="currentPassword" class="form-control">
+                <label>New Password:</label>
+                <input type="password" id="newPassword" class="form-control">
+                <label>Confirm New Password:</label>
+                <input type="password" id="confirmNewPassword" class="form-control">
+                <div class="password-buttons">
+                  <button class="btn btn-primary" id="savePassword">Save</button>
+                  <button class="btn btn-danger" id="cancelPassword">Cancel</button>
+              </div>
+              
+            </div>
+        </div>
+
           <!-- </div> -->
           
         
@@ -684,6 +713,50 @@
           alert("Changes have been saved successfully!");
       }
       }
+
+    </script>
+    <script>
+      // Toggle password visibility
+document.getElementById("togglePassword").addEventListener("click", function () {
+    let passwordField = document.getElementById("passwordField");
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        this.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+        passwordField.type = "password";
+        this.classList.replace("fa-eye-slash", "fa-eye");
+    }
+});
+
+// Open Change Password Modal
+document.getElementById("changePasswordButton").addEventListener("click", function () {
+    document.getElementById("changePasswordModal").style.display = "flex";
+});
+
+// Close Modal
+document.getElementById("cancelPassword").addEventListener("click", function () {
+    document.getElementById("changePasswordModal").style.display = "none";
+});
+
+// Save New Password
+document.getElementById("savePassword").addEventListener("click", function () {
+    let currentPassword = document.getElementById("currentPassword").value;
+    let newPassword = document.getElementById("newPassword").value;
+    let confirmNewPassword = document.getElementById("confirmNewPassword").value;
+
+    if (!currentPassword || !newPassword || !confirmNewPassword) {
+        alert("All fields are required!");
+        return;
+    }
+
+    if (newPassword !== confirmNewPassword) {
+        alert("New passwords do not match!");
+        return;
+    }
+
+    alert("Password changed successfully!");
+    document.getElementById("changePasswordModal").style.display = "none";
+});
 
     </script>
     

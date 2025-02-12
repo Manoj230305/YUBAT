@@ -320,3 +320,42 @@
   background: linear-gradient(0.25turn, #13b5ff, #d19bc7, #ec478d);
   color: white;
 }
+#lg-gender {
+  flex: 1;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 5px 0;
+  color: #888; /* Placeholder color */
+  cursor: pointer;
+  appearance: none; /* Removes default dropdown arrow */
+  border-bottom: 2px solid #ccc;
+}
+
+/* Custom dropdown arrow */
+.lg-input-group::after {
+  content: "\f078"; /* FontAwesome down arrow */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 10px;
+  color: #888;
+  font-size: 12px;
+}
+
+/* When a valid option is selected */
+#lg-gender:valid {
+  color: #000;
+}
+
+.placeholder-label {
+  position: absolute;
+  left: 45px; /* Adjust to align with other inputs */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #888;
+  transition: 0.3s;
+  pointer-events: none;
+}
