@@ -298,44 +298,7 @@
                 <!-- Booking Card 1 -->
                 <!-- Booking Card 1 -->
                 <!-- Booking Card 2 -->
-                <div class="booking-card shadow p-3 mb-3 w-100">
-                  <div class="row align-items-center">
-                    <div class="col-md-1 text-center">
-                      <img
-                        src="images/vnew.jpg"
-                        class="img-fluid rounded-circle booking-avatar"
-                        alt="Doctor Profile"
-                      />
-                    </div>
-                    
-                    <div class="col-md-4">
-                      <h5 class="booking-name mb-1">
-                        <i class="fas fa-user-md text-gray me-1"></i> Dr. Vj
-                      </h5>
-                      <p class="booking-specialist mb-1">
-                        <i class="fas fa-laptop-code text-secondary me-1"></i> Code Analyser
-                      </p>
-                      <p class="booking-date-time mb-1">
-                        <i class="fas fa-calendar-alt text-success me-1"></i> Mon, 30 Dec 2025, 3:00 PM IST (60 mins)
-                      </p>
-                    </div>
-                    <div class="col-md-2 text-center">
-                      <span class="badge booking-status declined">
-                        <i class="fas fa-times-circle me-1"></i> Payment Declined
-                      </span>
-                    </div>
-                    <div class="col-md-2 text-center">
-                      <span class="badge booking-status declined">
-                        <i class="fas fa-times-circle me-1"></i> Payment Declined
-                      </span>
-                    </div>
-                    <div class="col-md-3 text-center">
-                      <button class="btn btn-secondary" disabled>
-                        <i class="fas fa-ban me-1"></i> Pay Now
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                
 
                 <!--Booking card-->
                 <!-- Booking Card 2 -->
@@ -361,15 +324,16 @@
                       </p>
                     </div>
                     <div class="col-md-2 text-center">
-                      <span class="badge booking-status successfully">
-                        <i class="fas fa-star me-1"></i> Booking scheduled
-                      </span>
-                    </div>
-                    <div class="col-md-2 text-center">
                       <span class="badge booking-status declined">
                         <i class="fas fa-clock me-1"></i> Payment pending
                       </span>
                     </div>
+                    <div class="col-md-2 text-center">
+                      <span class="badge booking-status successfully">
+                        <i class="fas fa-star me-1"></i> Booking to be scheduled
+                      </span>
+                    </div>
+                    
                     <div class="col-md-3 text-center">
                       <button class="btn btn-success" >
                         <i class="fas fa-credit-card me-1"></i> Pay Now
@@ -403,14 +367,15 @@
                     </div>
                     <div class="col-md-2 text-center">
                       <span class="badge booking-status declined">
-                        <i class="fas fa-times-circle me-1"></i> Booking scheduled
+                        <i class="fas fa-times-circle me-1"></i> Payment Declined
                       </span>
                     </div>
                     <div class="col-md-2 text-center">
                       <span class="badge booking-status declined">
-                        <i class="fas fa-times-circle me-1"></i> Payment Declined
+                        <i class="fas fa-times-circle me-1"></i> Booking not scheduled
                       </span>
                     </div>
+                    
                     <div class="col-md-3 text-center">
                       <button class="btn btn-secondary" disabled>
                         <i class="fas fa-ban me-1"></i> Pay Now
@@ -490,56 +455,62 @@
           
           
         
-          <div class="tab-pane fade" id="invoices-tab-pane" role="tabpanel" aria-labelledby="invoices-tab">
+          <div class="tab-pane fade" id="invoices-tab-pane" role="tabpanel" aria-labelledby="bookings-tab">
             <div class="container mt-3">
-              <h3 class="mb-3">Your Invoices</h3>
-              <div class="table-responsive">
-                <table class="table table-hover align-middle">
-                  <thead class="table-light">
-                    <tr>
-                      <th>Invoice #</th>
-                      <th>Date</th>
-                      <th>Amount</th>
-                      <th>Status</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>INV-001</td>
-                      <td>2024-12-31</td>
-                      <td>Rs. 800</td>
-                      <td>
-                        <span class="badge bg-success">
-                          <i class="fas fa-check-circle me-1"></i> Completed
-                        </span>
-                      </td>
-                      <td>
-                        <button class="btn btn-sm btn-outline-gray">
-                          <i class="fas fa-download me-1"></i> Download
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>INV-002</td>
-                      <td>2025-01-01</td>
-                      <td>Rs. 1250</td>
-                      <td>
-                        <span class="badge bg-warning text-dark">
-                          <i class="fas fa-clock me-1"></i> Scheduled
-                        </span>
-                      </td>
-                      <td>
-                        <button class="btn btn-sm btn-outline-gray">
-                          <i class="fas fa-download me-1"></i> Download
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                <h3 class="mb-3">Your Bookings</h3>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Doctor Name</th>
+                                <th>Date & Time</th>
+                                <th>Amount Paid</th>
+                                <th>For You</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Booking Entry 1 -->
+                            <tr>
+                                <td>APT-202401</td>
+                                <td>Dr. Aashifa (Psychiatrist)</td>
+                                <td>2024-12-31 | 10:30 AM</td>
+                                <td>Rs. 800</td>
+                                <td>
+                                    <span class="badge bg-info text-dark">
+                                        <i class="fas fa-user-check me-1"></i> For You
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-file-alt me-1"></i> View Details
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Sample Booking Entry 2 -->
+                            <tr>
+                                <td>APT-202402</td>
+                                <td>Dr. Anil Kumar (Dermatologist)</td>
+                                <td>2025-01-01 | 02:00 PM</td>
+                                <td>Rs. 1250</td>
+                                <td>
+                                    <span class="badge bg-info text-dark">
+                                        <i class="fas fa-user-check me-1"></i> For You
+                                    </span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="fas fa-file-alt me-1"></i> View Details
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-          </div>
+        </div>
+        
           
           
           <!-- </div> -->
