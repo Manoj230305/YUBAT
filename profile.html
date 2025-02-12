@@ -268,26 +268,23 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Change Password Modal -->
+        <!-- </div> -->
         <div id="changePasswordModal" class="modal">
-            <div class="modal-content">
-                <h4>Change Password</h4>
-                <label>Current Password:</label>
-                <input type="password" id="currentPassword" class="form-control">
-                <label>New Password:</label>
-                <input type="password" id="newPassword" class="form-control">
-                <label>Confirm New Password:</label>
-                <input type="password" id="confirmNewPassword" class="form-control">
-                <div class="password-buttons">
-                  <button class="btn btn-primary" id="savePassword">Save</button>
-                  <button class="btn btn-danger" id="cancelPassword">Cancel</button>
-              </div>
-              
+          <div class="modal-content">
+              <h4>Change Password</h4>
+              <label>Current Password:</label>
+              <input type="password" id="currentPassword" class="form-control">
+              <label>New Password:</label>
+              <input type="password" id="newPassword" class="form-control">
+              <label>Confirm New Password:</label>
+              <input type="password" id="confirmNewPassword" class="form-control">
+              <div class="password-buttons">
+                <button class="btn btn-primary" id="savePassword">Save</button>
+                <button class="btn btn-danger" id="cancelPassword">Cancel</button>
             </div>
+            
+          </div>
         </div>
-
           <!-- </div> -->
           
         
@@ -295,13 +292,6 @@
             <div class="container mt-3">
               <h3 class="booking-header mb-3">My Bookings</h3>
               <div class="col-md-12">
-                <!-- Booking Card 1 -->
-                <!-- Booking Card 1 -->
-                <!-- Booking Card 2 -->
-                
-
-                <!--Booking card-->
-                <!-- Booking Card 2 -->
                 <div class="booking-card shadow p-3 mb-3 w-100">
                   <div class="row align-items-center">
                     <div class="col-md-1 text-center">
@@ -509,8 +499,7 @@
                     </table>
                 </div>
             </div>
-        </div>
-        
+          </div>
           
           
           <!-- </div> -->
@@ -686,50 +675,51 @@
       }
 
     </script>
-    <script>
-      // Toggle password visibility
-document.getElementById("togglePassword").addEventListener("click", function () {
-    let passwordField = document.getElementById("passwordField");
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
-        this.classList.replace("fa-eye", "fa-eye-slash");
-    } else {
-        passwordField.type = "password";
-        this.classList.replace("fa-eye-slash", "fa-eye");
-    }
-});
 
-// Open Change Password Modal
-document.getElementById("changePasswordButton").addEventListener("click", function () {
-    document.getElementById("changePasswordModal").style.display = "flex";
-});
+<script>
+  // Toggle password visibility
+    document.getElementById("togglePassword").addEventListener("click", function () {
+        let passwordField = document.getElementById("passwordField");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            this.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            this.classList.replace("fa-eye-slash", "fa-eye");
+        }
+    });
 
-// Close Modal
-document.getElementById("cancelPassword").addEventListener("click", function () {
-    document.getElementById("changePasswordModal").style.display = "none";
-});
+    // Open Change Password Modal
+    document.getElementById("changePasswordButton").addEventListener("click", function () {
+        document.getElementById("changePasswordModal").style.display = "flex";
+    });
 
-// Save New Password
-document.getElementById("savePassword").addEventListener("click", function () {
-    let currentPassword = document.getElementById("currentPassword").value;
-    let newPassword = document.getElementById("newPassword").value;
-    let confirmNewPassword = document.getElementById("confirmNewPassword").value;
+    // Close Modal
+    document.getElementById("cancelPassword").addEventListener("click", function () {
+        document.getElementById("changePasswordModal").style.display = "none";
+    });
 
-    if (!currentPassword || !newPassword || !confirmNewPassword) {
-        alert("All fields are required!");
-        return;
-    }
+    // Save New Password
+    document.getElementById("savePassword").addEventListener("click", function () {
+        let currentPassword = document.getElementById("currentPassword").value;
+        let newPassword = document.getElementById("newPassword").value;
+        let confirmNewPassword = document.getElementById("confirmNewPassword").value;
 
-    if (newPassword !== confirmNewPassword) {
-        alert("New passwords do not match!");
-        return;
-    }
+        if (!currentPassword || !newPassword || !confirmNewPassword) {
+            alert("All fields are required!");
+            return;
+        }
 
-    alert("Password changed successfully!");
-    document.getElementById("changePasswordModal").style.display = "none";
-});
+        if (newPassword !== confirmNewPassword) {
+            alert("New passwords do not match!");
+            return;
+        }
 
-    </script>
+        alert("Password changed successfully!");
+        document.getElementById("changePasswordModal").style.display = "none";
+    });
+
+  </script>
     
     </body>
 </html>
