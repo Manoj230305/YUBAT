@@ -1758,8 +1758,11 @@ button {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr); /* 6 columns */
+  gap: 30px; /* Adjust spacing between blocks */
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
 }
 
 .service-block {
@@ -1767,7 +1770,7 @@ button {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   overflow: hidden;
@@ -2103,7 +2106,7 @@ button:hover {
 } */
 
 .modal-content {
-   /* Ensures the modal content takes full height */
+  /* Ensures the modal content takes full height */
   overflow-y: auto; /* Adds vertical scrolling for overflow content */
 }
 
@@ -3330,7 +3333,6 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
   text-align: center;
 }
 
-
 .gradient-btn {
   background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
   border: none;
@@ -3373,18 +3375,17 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
   }
 }
 
-#gradbut{
+#gradbut {
   background: linear-gradient(0.25turn, #ec478d, #d19bc7, #13b5ff);
-  
-  color: white; 
+
+  color: white;
   border: none;
 }
 
-#gradbut:hover{
+#gradbut:hover {
   background: linear-gradient(0.25turn, #13b5ff, #d19bc7, #ec478d);
   color: white;
 }
-
 
 /* #btn-grad {background-image: linear-gradient(to right, #3494E6 0%, #EC6EAD  51%, #3494E6  100%)}
 #btn-grad {
@@ -3403,7 +3404,6 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
   color: #fff;
   text-decoration: none;
 } */
-
 
 .password-buttons {
   display: flex;
@@ -3496,7 +3496,7 @@ input[type="checkbox"]:checked + .checkbox-tile:before {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  
+
   width: 300px;
   text-align: center;
 }

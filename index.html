@@ -12,11 +12,20 @@
 
     <link href="css/bootstrap-icons.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
 
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/stylebanner.css" rel="stylesheet" />
+
+    <link href="vendor/aos/aos.css" rel="stylesheet" />
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="css/main.css" rel="stylesheet" />
   </head>
 
   <body id="section_1">
@@ -140,10 +149,10 @@
 
             <li class="nav-item ms-3">
               <a
-                class="nav-link custom-btn custom-border-btn btn" style="margin-top: 8px;"
+                class="nav-link custom-btn custom-border-btn btn"
+                style="margin-top: 8px"
                 href="#forsection"
                 id="gradbut"
-               
                 >Book a couch</a
               >
             </li>
@@ -169,7 +178,6 @@
     </nav>
 
     <main>
-
       <!-- <section class="hero-section hero-section-full-height">
         <div class="container-fluid">
           <div class="row">
@@ -280,55 +288,82 @@
       </style>       -->
 
       <div class="container-fluid px-0 mb-5">
-        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div
+          id="header-carousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
+        >
           <div class="carousel-inner">
             <!-- First Slide -->
             <div class="carousel-item active">
-              <img class="w-100" src="images/Yubat-Banner-Img-01.jpg" alt="Image">
+              <img
+                class="w-100"
+                src="images/Yubat-Banner-Img-01.jpg"
+                alt="Image"
+              />
               <div class="carousel-caption">
                 <div class="container">
                   <div class="row justify-content-start">
                     <div class="col-lg-8 text-start">
-                      <h1 class="fw-bold text-dark"
-                        style="font-size: clamp(1.8rem, 5vw, 4rem); margin-bottom: 1rem;">
-                        INDIA'S #1st Psychiatrist<br> Built Platform
+                      <h1
+                        class="fw-bold text-dark"
+                        style="
+                          font-size: clamp(1.8rem, 5vw, 4rem);
+                          margin-bottom: 1rem;
+                        "
+                      >
+                        INDIA'S #1st Psychiatrist<br />
+                        Built Platform
                       </h1>
-                      <p class="fw-bold text-secondary"
-                        style="font-size: clamp(1rem, 3vw, 2rem); margin-bottom: 1.5rem;">
+                      <p
+                        class="fw-bold text-secondary"
+                        style="
+                          font-size: clamp(1rem, 3vw, 2rem);
+                          margin-bottom: 1.5rem;
+                        "
+                      >
                         Let's Talk
                       </p>
                       <div class="d-flex gap-3 flex-wrap">
                         <!-- WhatsApp Button -->
-                        <a 
-                          href="https://wa.me/919916322222" 
-                          target="_blank" 
-                          class="btn btn-success shadow d-flex align-items-center" 
+                        <a
+                          href="https://wa.me/919916322222"
+                          target="_blank"
+                          class="btn btn-success shadow d-flex align-items-center"
                           style="
-                            font-size: 1rem; 
-                            font-weight: bold; 
-                            border-radius: 50px; 
-                            text-decoration: none; 
-                            color: white; 
-                            background: linear-gradient(90deg, #30897f, #30897f); 
+                            font-size: 1rem;
+                            font-weight: bold;
+                            border-radius: 50px;
+                            text-decoration: none;
+                            color: white;
+                            background: linear-gradient(
+                              90deg,
+                              #30897f,
+                              #30897f
+                            );
                             transition: all 0.3s ease;
                             padding: 0.5rem 1rem;
-                          " 
-                          onmouseover="this.style.boxShadow='0px 4px 15px rgba(0, 0, 0, 0.2)'" 
+                          "
+                          onmouseover="this.style.boxShadow='0px 4px 15px rgba(0, 0, 0, 0.2)'"
                           onmouseout="this.style.boxShadow='none'"
                         >
-                          <i class="fab fa-whatsapp" style="font-size: 20px; margin-right: 8px;"></i>
+                          <i
+                            class="fab fa-whatsapp"
+                            style="font-size: 20px; margin-right: 8px"
+                          ></i>
                           <span>WhatsApp</span>
                         </a>
-      
+
                         <!-- Consult Button -->
-                        <a 
-                          href="#consult" 
-                          class="btn btn-primary px-4 py-2 shadow" 
+                        <a
+                          href="#consult"
+                          class="btn btn-primary px-4 py-2 shadow"
                           style="
-                            font-size: 1rem; 
-                            font-weight: bold; 
-                            border-radius: 50px; 
-                            color: #fff; 
+                            font-size: 1rem;
+                            font-weight: bold;
+                            border-radius: 50px;
+                            color: #fff;
                             transition: all 0.3s ease;
                           "
                         >
@@ -340,11 +375,14 @@
                 </div>
               </div>
             </div>
-      
+
             <!-- Second Slide -->
             <div class="carousel-item">
-              <img class="w-100" src="images/Sec-Bg-01.jpg" alt="Next Image">
-              <div class="carousel-caption d-flex align-items-center justify-content-center" style="height: 100%;">
+              <img class="w-100" src="images/Sec-Bg-01.jpg" alt="Next Image" />
+              <div
+                class="carousel-caption d-flex align-items-center justify-content-center"
+                style="height: 100%"
+              >
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-12 text-center">
@@ -356,21 +394,31 @@
                   </div>
                 </div>
               </div>
-            </div>                                
+            </div>
           </div>
-      
+
           <!-- Carousel Controls -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#header-carousel"
+            data-bs-slide="prev"
+          >
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#header-carousel"
+            data-bs-slide="next"
+          >
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
       </div>
-      
+
       <style>
         @media (max-width: 768px) {
           .carousel-caption {
@@ -386,7 +434,7 @@
             margin-bottom: 1rem !important;
           }
         }
-      
+
         @media (max-width: 576px) {
           .btn img {
             width: 16px;
@@ -405,8 +453,7 @@
           }
         }
       </style>
-      
-      
+
       <!-- <section class="hero-section hero-section-full-height">
         <div class="container-fluid">
           <div class="row">
@@ -451,7 +498,7 @@
                                         </div>
                                     </div> -->
 
-                  <!-- <div class="carousel-item">
+      <!-- <div class="carousel-item">
                                         <img src="images/slide/medium-shot-people-collecting-donations.jpg" class="carousel-image img-fluid" alt="...">
                                         
                                         <div class="carousel-caption d-flex flex-column justify-content-end">
@@ -498,12 +545,14 @@
           <div class="row">
             <div class="col-lg-10 col-12 text-center mx-auto">
               <h2 class="mb-3">Welcome to YUBAT</h2>
-              <h5 class="mb-5" style="color: #717d8a;">Connect with Care: Expert Therapists for a Healthier You !</h5>
+              <h5 class="mb-5" style="color: #717d8a">
+                Connect with Care: Expert Therapists for a Healthier You !
+              </h5>
             </div>
 
             <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
               <div
-                class="featured-block d-flex justify-content-center align-items-center" 
+                class="featured-block d-flex justify-content-center align-items-center"
               >
                 <a href="foryou.html" class="d-block">
                   <img
@@ -517,7 +566,7 @@
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4" >
+            <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-4">
               <div
                 class="featured-block d-flex justify-content-center align-items-center"
               >
@@ -529,7 +578,7 @@
                   />
 
                   <p class="featured-block-text">
-                    You & <strong>Your Patner</strong> 
+                    You & <strong>Your Patner</strong>
                   </p>
                 </a>
               </div>
@@ -565,7 +614,7 @@
                   />
 
                   <p class="featured-block-text">
-                    Your <strong>Family</strong> 
+                    Your <strong>Family</strong>
                   </p>
                 </a>
               </div>
@@ -574,93 +623,352 @@
         </div>
       </section>
 
-      <section class="section-padding section-bg" id="section_2">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-              <img
-                src="images/b3.jpg"
-                class="custom-text-box-image img-fluid"
-                alt=""
-              />
-            </div>
-
-            <div class="col-lg-6 col-12">
-              <div class="custom-text-box">
-                <h2 class="mb-2">Our Story</h2>
-
-                <h5 class="mb-3">
-                  YUBAT. - Begin your journey to better mental health, where
-                  elegance meets effectiveness.
-                </h5>
-
-                <p class="mb-0">
-                  Our platform, exclusively run by psychiatrists, delivers
-                  premium mental health support directly to your fingertips,
-                  making it both accessible and affordable like never before.
-                  Connect with a psychiatrist in just under a minute, and take
-                  the first step towards your mental wellness with YUBAT.
-                </p>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
-                  <div class="custom-text-box mb-lg-0">
-                    <h5 class="mb-3">Meet Our Team</h5>
-                    <ul class="custom-list mt-2">
-                      <li class="custom-list-item d-flex">
-                        <i class="bi-check custom-text-box-icon me-2"></i>
-                        Expert Care Team
-                      </li>
-                      <li class="custom-list-item d-flex">
-                        <i class="bi-check custom-text-box-icon me-2"></i>
-                        Comprehensive Services
-                      </li>
-                      <li class="custom-list-item d-flex">
-                        <i class="bi-check custom-text-box-icon me-2"></i>
-                        Collaborative Expertise
-                      </li>
-                    </ul>
+      <i class="mobile-nav-toggle d-xl-none"></i>
+      <main class="main">
+        <!-- Why Us Section -->
+        <section id="why-us" class="why-us section light-background">
+          <div class="container">
+            <div class="row gy-4">
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-box" style="border-radius: 20px">
+                  <h3>Why Choose Yubat</h3>
+                  <p style="color: #f2fff2">
+                    At Yubat, we believe mental well-being is the foundation of
+                    a fulfilling life. We're here to listen, support, and guide
+                    you toward healing. With compassion, expertise, and a
+                    commitment to your growth, we help you navigate life's
+                    challenges—one step at a time. You are not alone; together,
+                    we heal, grow, and thrive
+                  </p>
+                  <div class="text-center">
+                    <a href="#" class="more-btn"
+                      ><span>Talk to Therapist</span>
+                      <i class="bi bi-chevron-right"></i
+                    ></a>
                   </div>
                 </div>
+              </div>
+              <!-- End Why Box -->
 
-                <div class="col-lg-6 col-md-6 col-12">
-                  <div
-                    class="custom-text-box d-flex flex-wrap d-lg-block mb-lg-0"
-                  >
-                    <div class="counter-thumb">
-                      <div class="d-flex">
-                        <span
-                          class="counter-number"
-                          data-from="1"
-                          data-to="30"
-                          data-speed="1000"
-                          style="color: plum"
-                        ></span>
-                        <span class="counter-number-text" style="color: plum"
-                          >+</span
-                        >
-                      </div>
-
-                      <span class="counter-text">Expert Doctors</span>
-                    </div>
-
-                    <div class="counter-thumb mt-4">
-                      <div class="d-flex">
-                        <!-- <span class="counter-number" data-from="1" data-to="120" data-speed="1000"></span> -->
-                        <span class="counter-number-text" style="color: plum"
-                          >24/7</span
-                        >
-                      </div>
-                      <span class="counter-text">Support</span>
+              <div class="col-lg-8 d-flex align-items-stretch">
+                <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="col-xl-4">
+                    <div
+                      class="icon-box d-flex flex-column justify-content-center align-items-center"
+                      style="border-radius: 20px"
+                    >
+                      <i class="bi bi-clipboard-data"></i>
+                      <h4>Register</h4>
+                      <p>
+                        Begin your journey by signing up. Taking the first step
+                        is a sign of strength, and we’re here to support you.
+                      </p>
                     </div>
                   </div>
+                  <!-- End Icon Box -->
+
+                  <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                      class="icon-box d-flex flex-column justify-content-center align-items-center"
+                      style="border-radius: 20px"
+                    >
+                      <i class="bi bi-gem"></i>
+                      <h4>Confess & Book a couch</h4>
+                      <p>
+                        Share your thoughts, worries, or struggles in a safe
+                        space. Choose a therapist at your convenience.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- End Icon Box -->
+
+                  <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
+                    <div
+                      class="icon-box d-flex flex-column justify-content-center align-items-center"
+                      style="border-radius: 20px"
+                    >
+                      <i class="bi bi-inboxes"></i>
+                      <h4>Interact & Relieve</h4>
+                      <p>
+                        Open up, express yourself, and receive expert guidance,
+                        through meaningful conversations, find relief and gain
+                        clarity.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- End Icon Box -->
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+        <!-- /Why Us Section -->
+
+        <!-- Stats Section -->
+        <section id="stats" class="stats section dark-background">
+          <img src="images/zen2.jpg" alt="" data-aos="fade-in" />
+
+          <div
+            class="container position-relative"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="row gy-4">
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="232"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>Clients</p>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="521"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>Projects</p>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="1453"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>Hours Of Support</p>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+
+              <div class="col-lg-3 col-md-6">
+                <div class="stats-item text-center w-100 h-100">
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="32"
+                    data-purecounter-duration="1"
+                    class="purecounter"
+                  ></span>
+                  <p>Workers</p>
+                </div>
+              </div>
+              <!-- End Stats Item -->
+            </div>
+          </div>
+        </section>
+        <!-- /Stats Section -->
+
+        <!-- Testimonials Section -->
+        <section
+          id="testimonials"
+          class="testimonials section light-background"
+        >
+          <!-- Section Title -->
+          <div class="container section-title" data-aos="fade-up">
+            <h2>TESTIMONIALS</h2>
+            <p>
+              What Are They
+              <span class="description-title">Saying About Us</span>
+            </p>
+          </div>
+          <!-- End Section Title -->
+
+          <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="row gy-4 justify-content-center">
+                      <div class="col-lg-6">
+                        <div class="testimonial-content">
+                          <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span
+                              >Proin iaculis purus consequat sem cure digni ssim
+                              donec porttitora entum suscipit rhoncus.
+                              Accusantium quam, ultricies eget id, aliquam eget
+                              nibh et. Maecen aliquam, risus at semper.</span
+                            >
+                            <i class="bi bi-quote quote-icon-right"></i>
+                          </p>
+                          <h3>Saul Goodman</h3>
+                          <h4>Ceo &amp; Founder</h4>
+                          <div class="stars">
+                            <i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 text-center">
+                        <img
+                          src="images/testimonials-3.jpg"
+                          class="img-fluid testimonial-img"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="row gy-4 justify-content-center">
+                      <div class="col-lg-6">
+                        <div class="testimonial-content">
+                          <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span
+                              >Export tempor illum tamen malis malis eram quae
+                              irure esse labore quem cillum quid cillum eram
+                              malis quorum velit fore eram velit sunt aliqua
+                              noster fugiat irure amet legam anim culpa.</span
+                            >
+                            <i class="bi bi-quote quote-icon-right"></i>
+                          </p>
+                          <h3>Sara Wilsson</h3>
+                          <h4>Designer</h4>
+                          <div class="stars">
+                            <i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 text-center">
+                        <img
+                          src="images/testimonials-3.jpg"
+                          class="img-fluid testimonial-img"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="row gy-4 justify-content-center">
+                      <div class="col-lg-6">
+                        <div class="testimonial-content">
+                          <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span
+                              >Enim nisi quem export duis labore cillum quae
+                              magna enim sint quorum nulla quem veniam duis
+                              minim tempor labore quem eram duis noster aute
+                              amet eram fore quis sint minim.</span
+                            >
+                            <i class="bi bi-quote quote-icon-right"></i>
+                          </p>
+                          <h3>Jena Karlis</h3>
+                          <h4>Store Owner</h4>
+                          <div class="stars">
+                            <i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 text-center">
+                        <img
+                          src="images/testimonials-3.jpg"
+                          class="img-fluid testimonial-img"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                  <div class="testimonial-item">
+                    <div class="row gy-4 justify-content-center">
+                      <div class="col-lg-6">
+                        <div class="testimonial-content">
+                          <p>
+                            <i class="bi bi-quote quote-icon-left"></i>
+                            <span
+                              >Fugiat enim eram quae cillum dolore dolor amet
+                              nulla culpa multos export minim fugiat minim velit
+                              minim dolor enim duis veniam ipsum anim magna sunt
+                              elit fore quem dolore labore illum veniam.</span
+                            >
+                            <i class="bi bi-quote quote-icon-right"></i>
+                          </p>
+                          <h3>John Larson</h3>
+                          <h4>Entrepreneur</h4>
+                          <div class="stars">
+                            <i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i
+                            ><i class="bi bi-star-fill"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-2 text-center">
+                        <img
+                          src="images/testimonials-3.jpg"
+                          class="img-fluid testimonial-img"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End testimonial item -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+        <!-- /Testimonials Section -->
+      </main>
+
+      <!-- Scroll Top -->
+      <a
+        href="#"
+        id="scroll-top"
+        class="scroll-top d-flex align-items-center justify-content-center"
+        ><i class="bi bi-arrow-up-short"></i
+      ></a>
 
       <section class="services-section">
         <div class="container">
@@ -672,11 +980,8 @@
               <div class="service-icon">
                 <img src="images/fav/Adult-Icon.png" alt="Adult Icon" />
               </div>
-              <h3 class="service-title">Adult</h3>
-              <p class="service-description">
-                Mental health services for adults, promoting well-being and
-                personal growth.
-              </p>
+              <h3 class="service-title">Loneliness</h3>
+              <p class="service-description">You're never alone with us.</p>
               <!-- <a href="#" class="read-more">Read More →</a> -->
             </div>
             <div class="service-block" style="background-color: #fff5f2">
@@ -684,32 +989,23 @@
                 <img src="images/fav/Addiction-Icon.png" alt="Addiction Icon" />
               </div>
               <h3 class="service-title">Addiction</h3>
-              <p class="service-description">
-                Break free from addiction with our supportive, personalized
-                recovery programs.
-              </p>
+              <p class="service-description">Lifting you up, step by step.</p>
               <!-- <a href="#" class="read-more">Read More →</a> -->
             </div>
             <div class="service-block" style="background-color: #f2fff2">
               <div class="service-icon">
                 <img src="images/fav/children-Icon.png" alt="Children Icon" />
               </div>
-              <h3 class="service-title">Children</h3>
-              <p class="service-description">
-                Help your child thrive with our supportive, expert mental health
-                services designed just for them.
-              </p>
+              <h3 class="service-title">Anxiety</h3>
+              <p class="service-description">Helping you find inner calm.</p>
               <!-- <a href="#" class="read-more">Read More →</a> -->
             </div>
             <div class="service-block" style="background-color: #f2fcff">
               <div class="service-icon">
                 <img src="images/fav/Old-age-Icon.png" alt="Old Age Icon" />
               </div>
-              <h3 class="service-title">Old Age</h3>
-              <p class="service-description">
-                Supporting seniors with tailored mental health services for a
-                fulfilling, joyful life.
-              </p>
+              <h3 class="service-title">Insomnia</h3>
+              <p class="service-description">Rest easy, we’re here for you.</p>
               <!-- <a href="#" class="read-more">Read More →</a> -->
             </div>
             <div class="service-block" style="background-color: #fef2ff">
@@ -719,22 +1015,54 @@
                   alt="Sexual Wellness Icon"
                 />
               </div>
-              <h3 class="service-title">Sexual Wellness</h3>
+              <h3 class="service-title">Overthinking</h3>
               <p class="service-description">
-                Empower your sexual health with our supportive services and
-                expert guidance for wellness.
+                Quieting the noise in your mind.
               </p>
+              <!-- <a href="#" class="read-more">Read More →</a> -->
+            </div>
+
+            <div class="service-block" style="background-color: #fff5f2">
+              <div class="service-icon">
+                <img src="images/fav/Addiction-Icon.png" alt="Addiction Icon" />
+              </div>
+              <h3 class="service-title">Addiction</h3>
+              <p class="service-description">Break free from addiction.</p>
+              <!-- <a href="#" class="read-more">Read More →</a> -->
+            </div>
+            <div class="service-block" style="background-color: #f2fff2">
+              <div class="service-icon">
+                <img src="images/fav/children-Icon.png" alt="Children Icon" />
+              </div>
+              <h3 class="service-title">Self-doubt</h3>
+              <p class="service-description">Empowering you to believe again</p>
+              <!-- <a href="#" class="read-more">Read More →</a> -->
+            </div>
+            <div class="service-block" style="background-color: #f2fcff">
+              <div class="service-icon">
+                <img src="images/fav/Old-age-Icon.png" alt="Old Age Icon" />
+              </div>
+              <h3 class="service-title">Anger Issues</h3>
+              <p class="service-description">Guiding you to peace within.</p>
+              <!-- <a href="#" class="read-more">Read More →</a> -->
+            </div>
+            <div class="service-block" style="background-color: #fef2ff">
+              <div class="service-icon">
+                <img
+                  src="images/fav/Sexual-Wellness-Icon.png"
+                  alt="Sexual Wellness Icon"
+                />
+              </div>
+              <h3 class="service-title">Grief</h3>
+              <p class="service-description">Helping you heal, not forget.</p>
               <!-- <a href="#" class="read-more">Read More →</a> -->
             </div>
             <div class="service-block" style="background-color: #fff8f2">
               <div class="service-icon">
                 <img src="images/fav/Teen-Icon.png" alt="Teen Icon" />
               </div>
-              <h3 class="service-title">Teen</h3>
-              <p class="service-description">
-                Empowering teens with confidential, expert mental health support
-                and guidance.
-              </p>
+              <h3 class="service-title">Low Self-Esteem</h3>
+              <p class="service-description">Rediscover your worth with us.</p>
               <!-- <a href="#" class="read-more">Read More →</a> -->
             </div>
           </div>
@@ -1070,5 +1398,15 @@
     <script src="js/click-scroll.js"></script>
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendor/aos/aos.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Main JS File -->
+    <script src="js/main.js"></script>
   </body>
 </html>
